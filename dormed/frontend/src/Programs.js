@@ -28,17 +28,19 @@ class Program extends Component {
 
   render() {
     return (
-      <Container style={{ marginTop: "20px" }}>
-        <h2 className="text-center text-success mt-3">Our programs:</h2>
-        <div className="p-5 shadow-lg">
-          <ProgramCarousel data={ImagesForSliders} />
-        </div>
-        <ProgramList
-          programs={this.state.programs}
-          resetState={this.resetState}
-        />
+      <>
+        <Container style={{ marginTop: "20px" }}>
+          <h2 className="text-center text-success mt-3">Our programs:</h2>
+          <div className="p-5 shadow-lg">
+            <ProgramCarousel data={ImagesForSliders} />
+          </div>
+          <ProgramList
+            programs={this.state.programs}
+            resetState={this.resetState}
+          />
+        </Container>
         <Footer />
-      </Container>
+      </>
     );
   }
 }

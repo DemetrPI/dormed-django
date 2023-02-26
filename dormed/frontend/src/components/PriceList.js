@@ -1,16 +1,17 @@
 import React, { Component } from "react";
+import '../../static/css/custom.css'
 import { Table } from "reactstrap";
 
 class PriceList extends Component {
   render() {
     const prices = this.props.prices;
     return (
-      <Table dark>
-        <thead>
+      <Table striped bordered className="table-success" responsive >
+        <thead className="tableHead" >
           <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
+            <th>Rodzaj zabiegu</th>
+            <th>Cena dla mieszkańców Willi Dorotka i Dormed Medical SPA</th>
+            <th>Cena dla klientów z zewnątrz</th>
             
           </tr>
         </thead>
@@ -25,8 +26,8 @@ class PriceList extends Component {
             prices.map(price => (
               <tr key={price.pk}>
                 <td>{price.item}</td>
-                <td>{price.description}</td>
-                <td>{price.price}</td>              
+                <td>{price.price_dormed}</td>
+                <td>{price.price_others}</td>              
               </tr>
             ))
           )}

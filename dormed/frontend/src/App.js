@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./Home";
+import Hero from "./components/Hero";
 import About from "./About";
 import Contacts from "./Contacts";
 import Program from "./Programs";
@@ -19,7 +20,7 @@ function App() {
   return (
  
     <div>
-  
+  <Hero/>
       <Navbar collapseOnSelect expand = "sm" bg="success" variant="dark" sticky="top">
         <Container>
         <Navbar.Toggle aria-controls="navbarScroll" data-bs-target = "navbarScroll"/>

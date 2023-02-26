@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { PRICE_API_URL } from "./constants";
+import Footer from './components/Footer'
 import PriceList from "./components/PriceList";
 import axios from "axios";
 
@@ -23,6 +24,7 @@ class Price extends Component {
 
   render() {
     return (
+          <>
       <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col>
@@ -34,6 +36,8 @@ class Price extends Component {
         </Row>
         
       </Container>
+      <Footer/>
+      </>
     );
   }
 }

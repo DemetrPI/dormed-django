@@ -1,10 +1,12 @@
 import React from "react";
 import Footer from "./components/Footer";
+
 import "../static/css/Home.css" 
 
 function Home() {
   return (
     <div>
+      
       <div>
         <div className="bgimg-1">
           <div className="caption">

@@ -4,7 +4,7 @@ from .models import *
 class PriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Price
-        fields = ('pk','item', 'description', 'price')
+        fields = ('pk','item', 'price_dormed', 'price_others')
         
 
 class ProgramSerializer(serializers.ModelSerializer):
