@@ -9,6 +9,7 @@ class PriceList extends Component {
       <Table striped bordered className="table-success" responsive >
         <thead className="tableHead" >
           <tr>
+            <th>#</th>
             <th>Rodzaj zabiegu</th>
             <th>Cena dla mieszkańców Willi Dorotka i Dormed Medical SPA</th>
             <th>Cena dla klientów z zewnątrz</th>
@@ -23,8 +24,9 @@ class PriceList extends Component {
               </td>
             </tr>
           ) : (
-            prices.map(price => (
+            prices.map((price,index) => (
               <tr key={price.pk}>
+                <td>{index+1}</td>
                 <td>{price.item}</td>
                 <td>{price.price_dormed}</td>
                 <td>{price.price_others}</td>              

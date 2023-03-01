@@ -10,7 +10,7 @@ function Regulamin() {
 
     return (
       <>
-        <Button variant="success" className='justify-content-end' onClick={() => setShow(true)}>
+        <Button variant="" className='justify-content-end regulamin' onClick={() => setShow(true)}>
           Regulamin
         </Button>
         <Modal
@@ -25,11 +25,11 @@ function Regulamin() {
         
        
           <Modal.Header closeButton className='bg-success' ></Modal.Header> 
-            <Modal.Title className='text-center  text-danger'>Regulamin Willi Dorotka i Dormed Medical SPA
+            <Modal.Title className='text-center text-danger'>Regulamin Willi Dorotka i Dormed Medical SPA
             <p ><small className='text-muted'>(obowiązuje od 01.11.2017)</small></p>
             </Modal.Title>
               
-          <Modal.Body>
+          <Modal.Body >
             <p>
             Właściciel  Willi Dorotka oraz Pensjonatu*** Dormed Medical SPA - Dorota Sagan będzie Państwu bardzo wdzięczna za współpracę w przestrzeganiu niniejszego regulaminu, który ma służyć zapewnieniu  spokoju i bezpiecznego pobytu wszystkich Gości.
             </p>

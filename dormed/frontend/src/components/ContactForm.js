@@ -136,7 +136,7 @@ export default function ContactForm() {
             </Form.Group>
             </Row>
             <Row className="mb-3 mt-5" >          
-          <Button className = "customBtn" type="submit">Submit form</Button>
+          <Button className = "submitButton" type="submit">Submit form</Button>
           </Row>
         </Form>
       )}

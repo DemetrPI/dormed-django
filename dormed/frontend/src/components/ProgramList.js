@@ -11,7 +11,7 @@ class ProgramList extends Component {
           <Accordion>
             <Accordion.Item>
               <Accordion.Header>
-                <h3 className="text-warning">Ops, no one here yet</h3>
+                <h3 className="">Ops, no one here yet</h3>
               </Accordion.Header>
               <Accordion.Body></Accordion.Body>
             </Accordion.Item>
@@ -22,7 +22,7 @@ class ProgramList extends Component {
               <Accordion flush>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>
-                    <h3 className="text-warning">{program.title}</h3>
+                    <h3 className="">{program.title}</h3>
                   </Accordion.Header>
                   <Accordion.Body>
                     <h4> {program.description}</h4>
