@@ -2,14 +2,35 @@ import "../../static/css/custom.css";
 import React from "react";
 import dormedLogo from "../../static/images/dormed-logo.png";
 
-
 function Hero() {
   return (
     <div className="hero">
-      <div className="d-flex flex-wrap align-items-center py-3">
-        <div className="col-md-4 d-flex align-items-center ms-5">
-          <img src={dormedLogo} height={64} className="rotate"/>
-          <span className="mb-3 mb-md-0 text-white fs-4"></span>
+      <div className="row ">
+        <div className="col-3">
+          <img src={dormedLogo} height={64} className="rotate ms-4" />
+        </div>
+        <div className="col-9">
+          <nav className="pt-2">
+            <span className="h5">Recepcja</span>
+            <a className="ms-3 pulse " href="tel:+48413782318">
+              41 378 23 18
+            </a>
+            <a className="ms-3 pulse" href="tel:+48600454635">
+              600 45 46 35
+            </a>
+            <a className="ms-3 pulse" href="tel:+48604596473">
+              604 59 64 73
+            </a>
+          </nav>
+          <nav className="pt-2">
+            <span className="h5">Klinika</span>
+            <a className="ms-3 pulse" href="tel:+48604596473">
+              604 59 64 73
+            </a>
+            <a className="ms-3 pulse" href="tel:+48606430365">
+              606 43 03 65
+            </a>
+          </nav>
         </div>
       </div>
     </div>
