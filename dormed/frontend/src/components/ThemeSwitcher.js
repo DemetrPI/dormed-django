@@ -46,6 +46,7 @@ function ColorThemeSwitcher() {
     <div>
       <label htmlFor="theme-select"></label>
       <select id="theme-select" onChange={changeTheme} value={theme} >
+        SelectTheme
         <option value="pink" id="pink">Pink</option>
         <option value="blue" id= "blue">Blue</option>
         <option value="green" id="green">Green</option>

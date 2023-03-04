@@ -8,6 +8,7 @@ urlpatterns = [
     path('about', index),
     path('contacts', index),
     path('prices', index),
+    path('news', index),
     
 
 ]

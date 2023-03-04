@@ -7,6 +7,7 @@ import Contacts from "./Contacts";
 import Program from "./Programs";
 import Prices from "./Prices";
 import Booking from "./Booking";
+import News from "./News";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -32,15 +33,17 @@ function App() {
             data-bs-target="navbarScroll"
           />
           <Navbar.Collapse id="navbarScroll">
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/" className="pulse">
               <FontAwesomeIcon icon={faHome} />
             </Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/programs">Programs</Nav.Link>
-              <Nav.Link href="/prices">Prices</Nav.Link>
-              <Nav.Link href="/booking">Booking</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/contacts">Contacts</Nav.Link>
+              <Nav.Link href="/programs" className="pulse">ZABIEGI</Nav.Link>
+              <Nav.Link href="/prices" className="pulse">CENY</Nav.Link>
+              <Nav.Link href="/booking" className="pulse">REZERWACIJA</Nav.Link>
+              <Nav.Link href="/about" className="pulse">INFORMACJE</Nav.Link>
+              <Nav.Link href="/contacts" className="pulse">KONTAKT</Nav.Link>
+              <Nav.Link href="/news" className="pulse">AKTUALNOŚCI</Nav.Link>
+
              
             </Nav>
             <ColorThemeSwitcher />
@@ -55,6 +58,7 @@ function App() {
         <Route path="/booking" element={<Booking />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>
+        <Route path="/contacts" element={<News />}></Route>
       </Routes>
     </div>
   );

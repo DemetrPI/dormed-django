@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "../../static/css/custom.css" 
 import Button from 'react-bootstrap/Button';
 import { Formik } from 'formik';
@@ -18,11 +19,25 @@ const schema = yup.object().shape({
   
 });
 
-export default function ContactForm() {
+
+ function ContactForm() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+    emailjs.sendForm('KLINIKA ZDOROWIA I URODU', 'template_lxi9sbc', form.current, 'N-Np3zCtvQkU6D30z')
+    .then((result) => {
+        alert("You Have send E-mail!")
+        .window.location.reload();    
+        
+    }, (error) => {
+        alert("Something went wrong!")
+    });
+};
+
   return (
     <Formik
       validationSchema={schema}
-      onSubmit={console.log}
       initialValues={{
         firstName: '',
         lastName: '',
@@ -39,7 +54,7 @@ export default function ContactForm() {
         errors,
         isValid
       }) => (
-        <Form noValidate onSubmit={handleSubmit}>
+        <Form noValidate ref={form} onSubmit={sendEmail}>
           {/* First name, last name */}
           <Row className="mb-3">
             <Form.Group
@@ -48,7 +63,7 @@ export default function ContactForm() {
               controlId="validationFormik101"
               className="position-relative"
             >
-              <Form.Label>First name</Form.Label>
+              <Form.Label>Imię</Form.Label>
               <Form.Control
                 type="text"
                 name="firstName"
@@ -64,7 +79,7 @@ export default function ContactForm() {
               controlId="validationFormik102"
               className="position-relative"
             >
-              <Form.Label>Last name</Form.Label>
+              <Form.Label>Nazwisko</Form.Label>
               <Form.Control
                 type="text"
                 name="lastName"
@@ -81,7 +96,7 @@ export default function ContactForm() {
 
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="validationFormikEmail">
-              <Form.Label>Your Email</Form.Label>
+              <Form.Label>Adres e-mail:</Form.Label>
               <InputGroup hasValidation>
                 <Form.Control
                   type="email"
@@ -121,7 +136,7 @@ export default function ContactForm() {
               controlId="validationFormik104"
               className="position-relative"
             >
-              <Form.Label>Email Text</Form.Label>
+              <Form.Label>Treść</Form.Label>
               <Form.Control
                 type="textarea"
                 placeholder="Email text"
@@ -136,10 +151,12 @@ export default function ContactForm() {
             </Form.Group>
             </Row>
             <Row className="mb-3 mt-5" >          
-          <Button className = "submitButton" type="submit">Submit form</Button>
+          <Button className = "submitButton" type="submit">Wyślij</Button>
           </Row>
         </Form>
       )}
     </Formik>
   );
 }
+
+export default ContactForm

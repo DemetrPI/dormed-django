@@ -9,7 +9,7 @@ function Hero() {
       <div className="d-flex flex-wrap align-items-center py-3">
         <div className="col-md-4 d-flex align-items-center ms-5">
           <img src={dormedLogo} height={64} className="rotate"/>
-          <span className="mb-3 mb-md-0 text-white fs-4">© 2022 Dormed</span>
+          <span className="mb-3 mb-md-0 text-white fs-4"></span>
         </div>
       </div>
     </div>

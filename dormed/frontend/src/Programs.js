@@ -30,7 +30,6 @@ class Program extends Component {
     return (
       <>
         <Container style={{ marginTop: "20px" }}>
-          <h2 className="text-center mt-3">Our programs:</h2>
           <div className="p-5 shadow-lg">
             <ProgramCarousel data={ImagesForSliders} />
           </div>
