@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./Home";
 import Hero from "./components/Hero";
 import ColorThemeSwitcher from "./components/ThemeSwitcher";
+import DropdownLanguages from "./components/DropdownLanguages";
 import About from "./About";
 import Contacts from "./Contacts";
 import Program from "./Programs";
@@ -38,6 +39,9 @@ function App() {
             </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/programs" className="pulse">ZABIEGI</Nav.Link>
+              {/* TODO */}
+              <Nav.Link href="/programs" className="pulse">REHABILITACIA</Nav.Link>
+              <Nav.Link href="/programs" className="pulse">PAKIETY</Nav.Link> 
               <Nav.Link href="/prices" className="pulse">CENY</Nav.Link>
               <Nav.Link href="/booking" className="pulse">REZERWACIJA</Nav.Link>
               <Nav.Link href="/about" className="pulse">INFORMACJE</Nav.Link>
@@ -46,6 +50,7 @@ function App() {
 
              
             </Nav>
+            <DropdownLanguages/>
             <ColorThemeSwitcher />
             <Regulamin />
           </Navbar.Collapse>

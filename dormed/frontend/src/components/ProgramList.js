@@ -10,7 +10,7 @@ class ProgramList extends Component {
       <div>
         {!programs || programs.length <= 0 ? (
           <Accordion>
-            <Accordion.Item>
+            <Accordion.Item eventKey = "0">
               <Accordion.Header>
                 <h3 className="">Ops, no one here yet</h3>
               </Accordion.Header>
@@ -21,14 +21,14 @@ class ProgramList extends Component {
           programs.map((program) => (
             <div key={program.pk}>
               <Accordion flush>
-                <Accordion.Item eventKey="0">
+                <Accordion.Item eventKey={program.pk}>
                   <Accordion.Header>
                     <h3 className="">{program.title}</h3>
                   </Accordion.Header>
                   <Accordion.Body>
                     <h4> {program.description}</h4>
                     <p>{program.results}</p>
-                    <Button ><a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">Go to order!</a></Button>
+                    <Button ><a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">Zamow!</a></Button>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>

@@ -12,18 +12,22 @@ function Hero() {
         <div className="col-9">
           <nav className="pt-2">
             <span className="h5">Recepcja</span>
-            <a className="ms-3 pulse " href="tel:+48413782318">
-              41 378 23 18
-            </a>
             <a className="ms-3 pulse" href="tel:+48600454635">
               600 45 46 35
             </a>
             <a className="ms-3 pulse" href="tel:+48604596473">
               604 59 64 73
             </a>
+            <a className="ms-3 pulse " href="tel:+48413782318">
+              41 378 23 18
+            </a>
           </nav>
           <nav className="pt-2">
-            <span className="h5">Klinika</span>
+            <span className="h5">Klinika  </span>
+            <a className="ms-3 pulse" href="tel:+48604596473">
+              604 59 64 73
+            </a>
+
             <a className="ms-3 pulse" href="tel:+48604596473">
               604 59 64 73
             </a>
@@ -32,6 +36,7 @@ function Hero() {
             </a>
           </nav>
         </div>
+      <hr className="border border-warning border-1" />
       </div>
     </div>
   );

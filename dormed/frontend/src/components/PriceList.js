@@ -11,8 +11,7 @@ class PriceList extends Component {
           <tr>
             <th>#</th>
             <th>Rodzaj zabiegu</th>
-            <th>Cena dla mieszkańców Willi Dorotka i Dormed Medical SPA</th>
-            <th>Cena dla klientów z zewnątrz</th>
+            <th>Cena, PLN</th>
             <th></th>
 
             
@@ -30,9 +29,8 @@ class PriceList extends Component {
               <tr key={price.pk}>
                 <td>{index+1}</td>
                 <td>{price.item}</td>
-                <td>{price.price_dormed}</td>
                 <td>{price.price_others}</td>              
-                <td><Button><a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">Order! </a></Button></td>              
+                <td><Button><a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">Zamów!</a></Button></td>              
               </tr>
             ))
           )}

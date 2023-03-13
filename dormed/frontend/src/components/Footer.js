@@ -24,9 +24,6 @@ function Footer() {
           <h5>Recepcja</h5>
           <ul className="list-unstyled text-small">
             <li>
-              <a className="ms-3 pulse" href="tel:+48413782318">
-                41 378 23 18
-              </a>
             </li>
             <li>
               <a className="ms-3 pulse" href="tel:+48600454635">
@@ -37,6 +34,11 @@ function Footer() {
               <a className="ms-3 pulse" href="tel:+48604596473">
                 604 59 64 73
               </a>
+              </li>
+              <li>
+              <a className="ms-3 pulse" href="tel:+48413782318">
+                41 378 23 18
+              </a>
             </li>
           </ul>
         </div>
@@ -44,6 +46,11 @@ function Footer() {
           <h5>Klinika</h5>
           <ul className="list-unstyled text-small">
             <li>
+            <a className="ms-3 pulse" href="tel:+48600454635">
+                600 45 46 35
+              </a>
+              </li>
+              <li>
               <a className="ms-3 pulse" href="tel:+48604596473">
                 604 59 64 73
               </a>
@@ -61,8 +68,7 @@ function Footer() {
             <li className="ms-3 pulse">NIP: 655-104-79-57</li>
             <li className="ms-3 pulse">Regon: 292668013</li>
             <li className="ms-3 pulse">
-              mBank 33 1140 2004  <br /> 0000
-              3102 4179 0650
+              mBank <br /> 33114020040000310241790650
             </li>
           </ul>
         </div>

@@ -1,11 +1,23 @@
 import Footer from "./components/Footer";
-import "../static/css/custom.css";
 import React from "react";
 import ImageGallery from "react-image-gallery";
-import { rooms } from "./components/rooms";
 
-class Booking extends React.Component {
-  render() {
+const images = [];
+const importAll = (r) => {
+  r.keys().forEach((key) => {
+    images.push({
+      original:r(key),
+      thumbnail:r(key),
+      originalAlt: "Villa Dorota rooms",
+    });
+  });
+};
+
+importAll(require.context("../static/images/rooms/", false, /\.(png|jpe?g|svg)$/));
+
+
+
+const Booking = () => {
     return (
       <div>
 
@@ -16,12 +28,11 @@ class Booking extends React.Component {
           <p>Pokoje dwuosobowe posiadają dwa pojedyncze łóżka.Pokoje rodzinne mają jedno łoze małżeńskie oraz jedno łóżko pojedyncze.</p>
           <p>Wszystkie pokoje z łazienkami (kabina prysznicowa, umywalka, wc, suszarka do włosów, ręczniki) i dostępem do Internetu. Internet bezprzewodowy, również na zewnątrz budynku.</p>
           <p>W każdym pokoju znajduje się telewizor, radio, lodówka, czajnik bezprzewodowy i komplet naczyń (talerze, sztućce, szklanki, kieliszki).</p>
-          <p>Do dyspozycji gości również: żelazko i deska do prasowania, leżaki, plac zabaw dla dzieci, grill, monitorowany parking</p>
-        
+          <p>Do dyspozycji gości również: żelazko i deska do prasowania, leżaki, plac zabaw dla dzieci, grill, monitorowany parking</p>     
           </div>
         
         <ImageGallery
-          items={rooms}
+          items={images}
           autoPlay={true}
           thumbnailPosition={"bottom"}
           />
@@ -29,5 +40,4 @@ class Booking extends React.Component {
       </div>
     );
   }
-}
 export default Booking;

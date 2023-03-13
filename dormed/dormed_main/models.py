@@ -12,8 +12,7 @@ class Program(models.Model):
 
 class Price(models.Model):
     item = models.CharField("Rodzaj zabiegu",max_length=150, unique=True)
-    price_dormed = models.CharField("Cena dla mieszkańców Willi Dorotka i Dormed Medical SPA",max_length=20,null=True, blank=True)
-    price_others = models.CharField("Cena dla klientów z zewnątrz",max_length=20,null=True, blank=True)
+    price_others = models.CharField("Cena, PLN",max_length=20,null=True, blank=True)
     
     
     def __str__(self):
