@@ -5,7 +5,10 @@ import { Button, Table } from "reactstrap";
 class PriceList extends Component {
   render() {
     const prices = this.props.prices;
+
+
     return (
+<div>
       <Table striped bordered className="table-success" responsive >
         <thead className="tableHead" >
           <tr>
@@ -36,6 +39,7 @@ class PriceList extends Component {
           )}
         </tbody>
       </Table>
+      </div>
     );
   }
 }
