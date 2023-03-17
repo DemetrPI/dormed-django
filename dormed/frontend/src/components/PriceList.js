@@ -1,47 +1,51 @@
-import React, { Component } from "react";
-import '../../static/css/custom.css'
+import React from "react";
+import "../../static/css/custom.css";
 import { Button, Table } from "reactstrap";
+import { useTranslation } from "react-i18next";
 
-class PriceList extends Component {
-  render() {
-    const prices = this.props.prices;
+function PriceList({ prices, filteredItems }) {
+  const itemsToRender = filteredItems.length ? filteredItems : prices;
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
-
-    return (
-<div>
-      <Table striped bordered className="table-success" responsive >
-        <thead className="tableHead" >
+  return (
+    <div>
+      <Table striped bordered className="table-success" responsive>
+        <thead className="tableHead">
           <tr>
             <th>#</th>
             <th>Rodzaj zabiegu</th>
             <th>Cena, PLN</th>
             <th></th>
-
-            
           </tr>
         </thead>
         <tbody>
-          {!prices || prices.length <= 0 ? (
+          {!itemsToRender || itemsToRender.length <= 0 ? (
             <tr>
-              <td colSpan="6" align="center">
+              <td colSpan="4" align="center">
                 <b>Ops, no one here yet</b>
               </td>
             </tr>
           ) : (
-            prices.map((price,index) => (
+            itemsToRender.map((price, index) => (
               <tr key={price.pk}>
-                <td>{index+1}</td>
-                <td>{price.item}</td>
-                <td>{price.price_others}</td>              
-                <td><Button><a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">Zamów!</a></Button></td>              
+                <td>{index + 1}</td>
+                <td>{price[`item_${currentLanguage}`]}</td>
+                <td>{price.price_others}</td>
+                <td>
+                  <Button>
+                    <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
+                      Zamów!
+                    </a>
+                  </Button>
+                </td>
               </tr>
             ))
           )}
         </tbody>
       </Table>
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default PriceList;

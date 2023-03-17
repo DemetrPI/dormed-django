@@ -9,6 +9,6 @@ urlpatterns = [
     path('contacts', index),
     path('prices', index),
     path('news', index),
-    
+    path('packages', index),
 
 ]

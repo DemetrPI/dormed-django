@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.2.0"
+  },
+  "devDependencies": {
+    "i18next-scanner": "^4.1.1"
+  }
+}

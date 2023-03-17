@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../static/css/index.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./components/i18n"
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 
@@ -9,8 +10,10 @@ import {BrowserRouter} from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
+    <React.Suspense fallback= "Loading...">
+    <BrowserRouter>
       <App />
-  </BrowserRouter>
+    </BrowserRouter>
+  </React.Suspense>
 </React.StrictMode>
 );

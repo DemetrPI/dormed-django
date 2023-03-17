@@ -1,43 +1,48 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../static/css/custom.css";
 import Accordion from "react-bootstrap/Accordion";
 import { Button } from "reactstrap";
+import { useTranslation } from "react-i18next";
 
-class ProgramList extends Component {
-  render() {
-    const programs = this.props.programs;
-    return (
-      <div>
-        {!programs || programs.length <= 0 ? (
-          <Accordion>
-            <Accordion.Item eventKey = "0">
-              <Accordion.Header>
-                <h3 className="">Ops, no one here yet</h3>
-              </Accordion.Header>
-              <Accordion.Body></Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-        ) : (
-          programs.map((program) => (
-            <div key={program.pk}>
-              <Accordion flush>
-                <Accordion.Item eventKey={program.pk}>
-                  <Accordion.Header>
-                    <h3 className="">{program.title}</h3>
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    <h4> {program.description}</h4>
-                    <p>{program.results}</p>
-                    <Button ><a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">Zamow!</a></Button>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </div>
-          ))
-        )}
-      </div>
-    );
-  }
-}
+const ProgramList = ({ programs }) => {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  return (
+    <div>
+      {!programs || programs.length <= 0 ? (
+        <Accordion>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              <h3 className="">Ops, no one here yet</h3>
+            </Accordion.Header>
+            <Accordion.Body></Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ) : (
+        programs.map((program) => (
+          <div key={program.pk}>
+            <Accordion flush>
+              <Accordion.Item eventKey={program.pk}>
+                <Accordion.Header>
+                  <h3>{program[`title_${currentLanguage}`]}</h3>
+                </Accordion.Header>
+                <Accordion.Body>
+                <h4>{program[`description_${currentLanguage}`]}</h4>
+                <p>{program[`results_${currentLanguage}`]}</p>
+                  <Button>
+                    <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
+                      Zamow!
+                    </a>
+                  </Button>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};
 
 export default ProgramList;

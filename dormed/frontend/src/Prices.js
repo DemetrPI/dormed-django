@@ -9,7 +9,6 @@ import Search from "./components/Search";
 
 function Price() {
   const [prices, setPrices] = useState([]);
-
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
@@ -30,20 +29,16 @@ function Price() {
         value.toString().toLowerCase().includes(query.toLowerCase())
       )
     );
-      setFilteredItems(filteredItems);
+    setFilteredItems(filteredItems);
   };
   
-
   return (
     <>
       <Search onSearch={handleSearch}/> 
       <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col>
-            <PriceList 
-             prices={filteredItems} 
-             resetState={resetState}
-             onSearch={handleSearch} />
+            <PriceList prices={prices} filteredItems={filteredItems} />
           </Col>
         </Row>
       </Container>
@@ -53,51 +48,3 @@ function Price() {
 }
 
 export default Price;
-
-
-
-// import React, { Component } from "react";
-// import { Col, Container, Row } from "reactstrap";
-// import { PRICE_API_URL } from "./constants";
-// import Footer from './components/Footer'
-// import PriceList from "./components/PriceList";
-// import axios from "axios";
-
-// class Price extends Component {
-//   state = {
-//     prices: []
-//   };
-
-//   componentDidMount() {
-//     this.resetState();
-//   }
-
-//   getPrices = () => {
-//     axios.get(PRICE_API_URL).then(res => this.setState({ prices: res.data }));
-//   };
-
-//   resetState = () => {
-//     this.getPrices();
-//   };
-
-//   render() {
-//     return (
-//           <>
-//       <Container style={{ marginTop: "20px" }}>
-//         <Row>
-//           <Col>
-//             <PriceList
-//               prices={this.state.prices}
-//               resetState={this.resetState}
-//             />
-//           </Col>
-//         </Row>
-        
-//       </Container>
-//       <Footer/>
-//       </>
-//     );
-//   }
-// }
-
-// export default Price;"
