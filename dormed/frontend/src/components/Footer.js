@@ -3,6 +3,7 @@ import "../../static/css/custom.css";
 import dormedLogo from "../../static/images/dormed-logo.png";
 import orly from "../../static/images/orly.png";
 import { Instagram, Twitter, Facebook } from "react-bootstrap-icons";
+import { Trans } from "react-i18next";
 
 function Footer() {
   return (
@@ -14,10 +15,11 @@ function Footer() {
           <img src={orly} height={48}></img>
         </div>
         <div className="col-6 col-md text-center">
-          <h5>Adres</h5>
+        <h5><Trans trKey = "address">Adres</Trans></h5>
+          
           <ul className="list-unstyled text-small">
-            <li className="ms-3 pulse">ul. Rokosza 5</li>
-            <li className="ms-3 pulse">28-100 Busko Zdrój</li>
+            <li className="ms-3 pulse"><Trans trKey="street">ul. Rokosza 5</Trans></li>
+            <li className="ms-3 pulse"><Trans trKey="city">28-100 Busko Zdrój</Trans></li>
           </ul>
         </div>
         <div className="col-6 col-md text-center">

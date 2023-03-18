@@ -3,6 +3,7 @@ import "../../static/css/custom.css";
 import Accordion from "react-bootstrap/Accordion";
 import { Button } from "reactstrap";
 import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 const ProgramList = ({ programs }) => {
   const { t, i18n } = useTranslation();
@@ -14,7 +15,7 @@ const ProgramList = ({ programs }) => {
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>
-              <h3 className="">Ops, no one here yet</h3>
+              <h3><Trans trKey="Ops, no one here yet">Ops, no one here yet</Trans></h3>
             </Accordion.Header>
             <Accordion.Body></Accordion.Body>
           </Accordion.Item>
@@ -32,7 +33,7 @@ const ProgramList = ({ programs }) => {
                 <p>{program[`results_${currentLanguage}`]}</p>
                   <Button>
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
-                      Zamow!
+                    <Trans trKey = "order">Zamów!</Trans>
                     </a>
                   </Button>
                 </Accordion.Body>

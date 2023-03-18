@@ -2,6 +2,7 @@ import React from "react";
 import "../../static/css/custom.css";
 import { Button, Table } from "reactstrap";
 import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 function PriceList({ prices, filteredItems }) {
   const itemsToRender = filteredItems.length ? filteredItems : prices;
@@ -14,8 +15,8 @@ function PriceList({ prices, filteredItems }) {
         <thead className="tableHead">
           <tr>
             <th>#</th>
-            <th>Rodzaj zabiegu</th>
-            <th>Cena, PLN</th>
+            <th><Trans trKey="TableItems">Rodzaj zabiegu</Trans></th>
+            <th><Trans trKey="ItemPrice">Cena, PLN</Trans></th>
             <th></th>
           </tr>
         </thead>
@@ -23,7 +24,7 @@ function PriceList({ prices, filteredItems }) {
           {!itemsToRender || itemsToRender.length <= 0 ? (
             <tr>
               <td colSpan="4" align="center">
-                <b>Ops, no one here yet</b>
+                <b><Trans trKey="Ops, no one here yet">Ops, no one here yet</Trans></b>
               </td>
             </tr>
           ) : (
@@ -35,7 +36,7 @@ function PriceList({ prices, filteredItems }) {
                 <td>
                   <Button>
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
-                      Zamów!
+                      <Trans trKey = "order">Zamów!</Trans>
                     </a>
                   </Button>
                 </td>

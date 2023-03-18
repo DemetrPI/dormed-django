@@ -12,8 +12,8 @@ function Regulamin() {
         className="justify-content-end regulamin pulse"
         onClick={() => setShow(true)}
       >
-        <Trans trKey = "Regulamin">
-        Regulamin
+        <Trans trKey="Regulamin">
+          Regulamin
         </Trans>
       </Button>
       <Modal
@@ -23,128 +23,151 @@ function Regulamin() {
         fullscreen
         centered
       >
-        <Modal.Header closeButton className="modalHeader"></Modal.Header>
+        <Modal.Header closeButton className="modalHeader">
+          <Trans trKey="Regulamin">Regulamin</Trans>
+        </Modal.Header>
         <Modal.Title className="text-center modalTitle">
-          <h1>Regulamin Willi Dorotka i Dormed Medical SPA</h1>
-          <p>(obowiązuje od 01.11.2017)</p>
+          <Trans trKey="title">
+            <h1>Regulamin Willi Dorotka i Dormed Medical SPA</h1>
+            <p>(obowiązuje od 01.11.2017)</p>
+          </Trans>
         </Modal.Title>
 
         <Modal.Body className="modalBody">
+          <Trans trKey="body">
+            <p>
+              Właściciel Willi Dorotka oraz Pensjonatu*** Dormed Medical SPA -
+              Dorota Sagan będzie Państwu bardzo wdzięczna za współpracę w
+              przestrzeganiu niniejszego regulaminu, który ma służyć zapewnieniu
+              spokoju i bezpiecznego pobytu wszystkich Gości.
+            </p>
+            <p>
+              Recepcja ogólna znajduje się w Dormed Medical SPA ul. Rokosza 5w
+              Busku-Zdroju Tel. 41 378 23 18 lub 600 45 46 35
+            </p>
+            </Trans>
+            <ol type="I">
+              <li>
+                <Trans trKey="li1">
+                  W pokojach obowiązuje całkowity zakaz palenia papierosów i
+                  tytoniu!!!
+                  <p>
+                    W przypadku nie przestrzegania zakazu palenia będziemy
+                    obciążać Państwa za malowanie i odświeżanie pokoju.
+                  </p>
+                </Trans>
+              </li>
+              
+              <li>
+  <Trans trKey="checkIn">
+    Określenie doby hotelowej
+    <p>
+      Doba hotelowa jest terminem umownym i trwa od godziny 15:00 w dniu
+      przyjazdu i kończy się o godzinie 12:00 w dniu odjazdu - w indywidualnych
+      przypadkach po uzgodnieniu z recepcją możliwe jest wcześniejsze przyjęcie
+      gościa do zamieszkania lub późniejszego opuszczenia pokoju.
+    </p>
+    <p>
+      Gość przybywający do Willi/Pensjonatu zobowiązany jest do dokonania
+      zameldowania w recepcji zgodnie z przepisami „Ustawy z dnia 10 kwietnia
+      1974r. o ewidencji ludności i dowodach osobistych” wraz z późniejszymi
+      zmianami oraz opłacenia pobytu z góry w dniu zameldowania i uiszczenia
+      opłaty klimatycznej (Uchwała Rady Miasta do wglądu w recepcji).
+    </p>
+    <p>
+      Zajmujący pokój w chwili meldunku określa czas swojego pobytu
+      informując o tym recepcjonistę. Jeśli gość nie określił pobytu najmując
+      pokój przyjmuje się iż pokój został wynajęty na 1 dobę.
+    </p>
+    <p>
+      Płatność za pobyt przyjmowana jest z góry, za czas pobytu ustalony w
+      rezerwacji.
+    </p>
+    <p>
+      W przypadku braku zapłaty w dniu przyjazdu za czas pobytu ustalony w
+      rezerwacji przyjmujemy, że pobyt trwa 1 dobę i nie gwarantujemy pokoju na
+      pozostałe dni rezerwacji.
+    </p>
+  </Trans>
+</li>
+<li>
+  <Trans trKey="extendStay">
+    Tryb przedłużania pobytu
+    <p>
+      Życzenia przedłużenia pobytu poza okres wskazany w dniu przybycia gość
+      zgłasza recepcji do godz. 1000 w dniu poprzedzającym dzień wyjazdu.
+      Właściciel może odmówić przedłużenia pobytu gościom w przypadku
+      rezerwacji wszystkich miejsc noclegowych / pokoi / lub w przypadku gości
+      nie przestrzegających regulaminu.
+    </p>
+  </Trans>
+            </li>
+        <li>
+        <Trans trKey="obowiązek">
+          Willa Dorotka oraz pensjonat Dormed Medical SPA ma obowiązek zapewnić:
+          <ol type="i">
+            <li>
+              Warunki pełnego i nieskrępowanego wypoczynku gościa. Bezpieczeństwo pobytu,
+              w tym zachowanie tajemnicy informacji o gościu.
+            </li>
+            <li>
+              Profesjonalną i miłą obsługę.
+            </li>
+            <li>
+              Sprzątanie pokoju 2 razy w tygodniu.
+            </li>
+            <li>
+              Bezpłatną wymianę ręczników po 7 dobach pobytu - ręczniki bezpłatnie wymieniane są
+              w każdej 8 (ósmej) dobie pobytu lub ODPŁATNIE NA KAŻDE ŻYCZENIE KLIENTA wg cennika
+              znajdującego się w recepcji.
+            </li>
+            <li>
+              Bezpłatną wymianę pościeli po 14 dobach pobytu pościel bezpłatnie wymieniana są
+              w każdej 15 (piętnastej) dobie pobytu LUB ODPŁATNIE NA KAŻDE ŻYCZENIE KLIENTA wg
+              cennika znajdującego się w recepcji.
+            </li>
+            <li>
+              Wykonywanie niezbędnych napraw urządzeń podczas nieobecności gościa lub jego obecności
+              gdy wyrazi na to zgodę i życzenie.
+            </li>
+          </ol>
+        </Trans>
+      </li>
+      <li>
+        <Trans trKey="usługi">
+          Świadczenie usług
           <p>
-            Właściciel Willi Dorotka oraz Pensjonatu*** Dormed Medical SPA -
-            Dorota Sagan będzie Państwu bardzo wdzięczna za współpracę w
-            przestrzeganiu niniejszego regulaminu, który ma służyć zapewnieniu
-            spokoju i bezpiecznego pobytu wszystkich Gości.
+            Na życzenie gości Willa Dorotka świadczy nieodpłatne usługi (prosimy o kontakt z recepcją
+            tel. 600 45 46 35 lub 41 378 23 18):
           </p>
+          <ol type="i">
+            <li>
+              udzielanie informacji związanych z pobytem lub podróżą.
+            </li>
+            <li>
+              zamawianie taxi.
+            </li>
+            <li>
+              udostępnienia grilla ogrodowego.
+            </li>
+            <li>
+              bezprzewodowe łącze internetowe.
+            </li>
+            <li>
+              udostępnienie żelazka.
+            </li>
+            <li>
+              parking monitorowany niestrzeżony płatny - liczba miejsc ograniczona (nie ma możliwości
+              wcześniejszego rezerwowania miejsc parkingowych).
+            </li>
+          </ol>
           <p>
-            Recepcja ogólna znajduje się w Dormed Medical SPA ul. Rokosza 5w
-            Busku-Zdroju Tel. 41 378 23 18 lub 600 45 46 35
+            Ze względu na ograniczoną liczbę miejsc parkingowych Willa Dorotka nie gwarantuje dostępności
+            do parkingu.
           </p>
-          <ol type="I">
-            <li>
-              W pokojach obowiązuje całkowity zakaz palenia papierosów i
-              tytoniu!!!
-              <p>
-                W przypadku nie przestrzegania zakazu palenia będziemy obciążać
-                Państwa za malowanie i odświeżanie pokoju.
-              </p>
+        </Trans>
             </li>
-            <li>
-              Określenie doby hotelowej
-              <p>
-                Doba hotelowa jest terminem umownym i trwa od godziny 15:00 w
-                dniu przyjazdu i kończy się o godzinie 12:00 w dniu odjazdu - w
-                indywidualnych przypadkach po uzgodnieniu z recepcją możliwe
-                jest wcześniejsze przyjęcie gościa do zamieszkania lub
-                późniejszego opuszczenia pokoju.
-              </p>
-              <p>
-                Gość przybywający do Willi/Pensjonatu zobowiązany jest do
-                dokonania zameldowania w recepcji zgodnie z przepisami „Ustawy z
-                dnia 10 kwietnia 1974r. o ewidencji ludności i dowodach
-                osobistych” wraz z późniejszymi zmianami oraz opłacenia pobytu z
-                góry w dniu zameldowania i uiszczenia opłaty klimatycznej
-                (Uchwała Rady Miasta do wglądu w recepcji).
-              </p>
-              <p>
-                Zajmujący pokój w chwili meldunku określa czas swojego pobytu
-                informując o tym recepcjonistę. Jeśli gość nie określił pobytu
-                najmując pokój przyjmuje się iż pokój został wynajęty na 1 dobę.
-              </p>
-              <p>
-                Płatność za pobyt przyjmowana jest z góry, za czas pobytu
-                ustalony w rezerwacji.
-              </p>
-              <p>
-                W przypadku braku zapłaty w dniu przyjazdu za czas pobytu
-                ustalony w rezerwacji przyjmujemy, że pobyt trwa 1 dobę i nie
-                gwarantujemy pokoju na pozostałe dni rezerwacji.
-              </p>
-            </li>
-            <li>
-              Tryb przedłużania pobytu
-              <p>
-                Życzenia przedłużenia pobytu poza okres wskazany w dniu
-                przybycia gość zgłasza recepcji do godz. 1000 w dniu
-                poprzedzającym dzień wyjazdu. Właściciel może odmówić
-                przedłużenia pobytu gościom w przypadku rezerwacji wszystkich
-                miejsc noclegowych / pokoi / lub w przypadku gości nie
-                przestrzegających regulaminu.
-              </p>
-            </li>
-            <li>
-              Willa Dorotka oraz pensjonat Dormed Medical SPA ma obowiązek
-              zapewnić:
-              <ol type="i">
-                <li>
-                  Warunki pełnego i nieskrępowanego wypoczynku gościa .
-                  Bezpieczeństwo pobytu, w tym zachowanie tajemnicy informacji o
-                  gościu.
-                </li>
-                <li>Profesjonalną i miłą obsługę.</li>
-                <li>Sprzątanie pokoju 2 razy w tygodniu</li>
-                <li>
-                  Bezpłatną wymianę ręczników po 7 dobach pobytu - ręczniki
-                  bezpłatnie wymieniane są w każdej 8 (ósmej) dobie pobytu lub
-                  ODPŁATNIE NA KAŻDE ŻYCZENIE KLIENTA wg cennika znajdującego
-                  się w recepcji.
-                </li>
-                <li>
-                  Bezpłatną wymianę pościeli po 14 dobach pobytu pościel
-                  bezpłatnie wymieniana są w każdej 15 (piętnastej) dobie pobytu
-                  LUB ODPŁATNIE NA KAŻDE ŻYCZENIE KLIENTA wg cennika
-                  znajdującego się w recepcji.
-                </li>
-                <li>
-                  Wykonywanie niezbędnych napraw urządzeń podczas nieobecności
-                  gościa lub jego obecności gdy wyrazi na to zgodę i życzenie.
-                </li>
-              </ol>
-            </li>
-            <li>
-              Świadczenie usług
-              <p>
-                Na życzenie gości Willa Dorotka świadczy nieodpłatne usługi
-                (prosimy o kontakt z recepcją tel. 600 45 46 35 lub 41 378 23
-                18):
-              </p>
-              <ol type="i">
-                <li>udzielanie informacji związanych z pobytem lub podróżą</li>
-                <li>zamawianie taxi</li>
-                <li>udostępnienia grilla ogrodowego</li>
-                <li>bezprzewodowe łącze internetowe</li>
-                <li>udostępnienie żelazka</li>
-                <li>
-                  parking monitorowany niestrzeżony płatny - liczba miejsc
-                  ograniczona (nie ma możliwości wcześniejszego rezerwowania
-                  miejsc parkingowych)
-                </li>
-              </ol>
-              <p>
-                Ze względu na ograniczoną liczbę miejsc parkingowych Willa
-                Dorotka nie gwarantuje dostępności do parkingu.
-              </p>
-            </li>
+
             <p>
               Odpłatne usługi wg obowiązującego cennika znajdującego się w
               recepcji (prosimy o kontakt z recepcją tel. 600 45 46 35 lub 41

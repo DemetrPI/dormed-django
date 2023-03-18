@@ -1,6 +1,6 @@
 import React from "react";
 import Map from "./components/Navigation";
-import ContactForm from "./components/ContactForm";
+import MailUsForm from "./components/MailUsForm";
 import Footer from "./components/Footer";
 
 function Contacts() {
@@ -20,7 +20,7 @@ function Contacts() {
         <h2 className="text-center mt-3">Wyślij wiadomość:</h2>
       </div>
       <div className="d-flex justify-content-center">
-     <ContactForm />
+     <MailUsForm />
      </div>
       <h2 className="text-center">Możesz nas znaleźć na mapie Google</h2>
      <div className="d-flex justify-content-center">
