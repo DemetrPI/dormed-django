@@ -70,7 +70,7 @@ function MailUsForm() {
         <Row className="mb-3">
           <Form.Group as={Col} md="6" className="position-relative">
             <Form.Label>
-              <Trans trKey="firstName">Imię</Trans>
+              <Trans i18nKey="firstName">Imię</Trans>
             </Form.Label>
             <Form.Control
               type="text"
@@ -81,7 +81,7 @@ function MailUsForm() {
           </Form.Group>
           <Form.Group as={Col} md="6" className="position-relative">
             <Form.Label>
-              <Trans trKey="lastName">Nazwisko</Trans>
+              <Trans i18nKey="lastName">Nazwisko</Trans>
             </Form.Label>
             <Form.Control
               type="text"
@@ -97,7 +97,7 @@ function MailUsForm() {
         <Row className="mb-3">
           <Form.Group as={Col} md="6">
             <Form.Label>
-              <Trans trKey="email">Adres e-mail:</Trans>
+              <Trans i18nKey="email">Adres e-mail:</Trans>
             </Form.Label>
             <InputGroup hasValidation>
               <Form.Control
@@ -112,7 +112,7 @@ function MailUsForm() {
           </Form.Group>
           <Form.Group as={Col} md="6" className="position-relative">
             <Form.Label>
-              <Trans trKey="Subject">Subject</Trans>
+              <Trans i18nKey="Subject">Subject</Trans>
             </Form.Label>
             <Form.Control
               type="text"
@@ -130,7 +130,7 @@ function MailUsForm() {
         <Row className="mb-3">
           <Form.Group as={Col} md="12" className="position-relative">
             <Form.Label>
-              <Trans trKey="emailText">Treść</Trans>
+              <Trans i18nKey="emailText">Treść</Trans>
             </Form.Label>
             <Form.Control
               type="textarea"
@@ -150,7 +150,7 @@ function MailUsForm() {
             type="submit"
             disabled={!getIsFormValid()}
           >
-            <Trans trKey="submit">Wyślij</Trans>
+            <Trans i18nKey="submit">Wyślij</Trans>
           </Button>
         </Row>
       </Form>
@@ -163,11 +163,11 @@ function MailUsForm() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Trans trKey={alertMessage.includes("success") ? "alert-success" : "alert-fail"}>{alertMessage}</Trans>
+          {alertMessage.includes("success") ? "alert-success" : "alert-fail"}{alertMessage}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={closeModal}>
-            <Trans trKey="close-button">Close</Trans>
+            <Trans i18nKey="close-button">Close</Trans>
           </Button>
         </Modal.Footer>
       </Modal>

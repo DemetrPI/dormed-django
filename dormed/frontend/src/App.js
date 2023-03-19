@@ -41,14 +41,14 @@ const {t} = useTranslation();
               <FontAwesomeIcon icon={faHome} />
             </Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/programs" className="pulse"><Trans trKey = "ZABIEGI">ZABIEGI</Trans></Nav.Link>
-              <Nav.Link href="/programs" className="pulse"><Trans trKey="REHABILITACIA">REHABILITACIA</Trans></Nav.Link>
-              <Nav.Link href="/packages" className="pulse"><Trans trKey="PAKIETY">PAKIETY</Trans></Nav.Link> 
-              <Nav.Link href="/prices" className="pulse"><Trans trKey="CENY">CENY</Trans></Nav.Link>
-              <Nav.Link href="/booking" className="pulse"><Trans trKey="REZERWACIJA">REZERWACIJA</Trans></Nav.Link>
-              <Nav.Link href="/about" className="pulse"><Trans trKey = "INFORMACJE">INFORMACJE</Trans></Nav.Link>
-              <Nav.Link href="/contacts" className="pulse"><Trans trKey = "KONTAKTY">KONTAKTY</Trans></Nav.Link>
-              <Nav.Link href="/news" className="pulse"><Trans trKey = "AKTUALNOŚCI">AKTUALNOŚCI</Trans></Nav.Link>
+              <Nav.Link href="/programs" className="pulse"><Trans i18nKey = "ZABIEGI">ZABIEGI</Trans></Nav.Link>
+              <Nav.Link href="/programs" className="pulse"><Trans i18nKey="REHABILITACIA">REHABILITACIA</Trans></Nav.Link>
+              <Nav.Link href="/packages" className="pulse"><Trans i18nKey="PAKIETY">PAKIETY</Trans></Nav.Link> 
+              <Nav.Link href="/prices" className="pulse"><Trans i18nKey="CENY">CENY</Trans></Nav.Link>
+              <Nav.Link href="/booking" className="pulse"><Trans i18nKey="REZERWACIJA">REZERWACIJA</Trans></Nav.Link>
+              <Nav.Link href="/about" className="pulse"><Trans i18nKey = "INFORMACJE">INFORMACJE</Trans></Nav.Link>
+              <Nav.Link href="/contacts" className="pulse"><Trans i18nKey = "KONTAKTY">KONTAKTY</Trans></Nav.Link>
+              <Nav.Link href="/news" className="pulse"><Trans i18nKey = "AKTUALNOŚCI">AKTUALNOŚCI</Trans></Nav.Link>
                           
             </Nav>
             <LanguageChanger/>

@@ -15,7 +15,7 @@ const ProgramList = ({ programs }) => {
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>
-              <h3><Trans trKey="Ops, no one here yet">Ops, no one here yet</Trans></h3>
+              <h3><Trans i18nKey="Ops, no one here yet">Ops, no one here yet</Trans></h3>
             </Accordion.Header>
             <Accordion.Body></Accordion.Body>
           </Accordion.Item>
@@ -33,7 +33,7 @@ const ProgramList = ({ programs }) => {
                 <p>{program[`results_${currentLanguage}`]}</p>
                   <Button>
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
-                    <Trans trKey = "order">Zamów!</Trans>
+                    <Trans i18nKey = "order">Zamów!</Trans>
                     </a>
                   </Button>
                 </Accordion.Body>

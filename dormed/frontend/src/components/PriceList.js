@@ -15,8 +15,8 @@ function PriceList({ prices, filteredItems }) {
         <thead className="tableHead">
           <tr>
             <th>#</th>
-            <th><Trans trKey="TableItems">Rodzaj zabiegu</Trans></th>
-            <th><Trans trKey="ItemPrice">Cena, PLN</Trans></th>
+            <th><Trans i18nKey="TableItems">Rodzaj zabiegu</Trans></th>
+            <th><Trans i18nKey="ItemPrice">Cena, PLN</Trans></th>
             <th></th>
           </tr>
         </thead>
@@ -24,7 +24,7 @@ function PriceList({ prices, filteredItems }) {
           {!itemsToRender || itemsToRender.length <= 0 ? (
             <tr>
               <td colSpan="4" align="center">
-                <b><Trans trKey="Ops, no one here yet">Ops, no one here yet</Trans></b>
+                <b><Trans i18nKey="Ops, no one here yet">Ops, no one here yet</Trans></b>
               </td>
             </tr>
           ) : (
@@ -36,7 +36,7 @@ function PriceList({ prices, filteredItems }) {
                 <td>
                   <Button>
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
-                      <Trans trKey = "order">Zamów!</Trans>
+                      <Trans i18nKey = "order">Zamów!</Trans>
                     </a>
                   </Button>
                 </td>

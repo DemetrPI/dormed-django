@@ -25,17 +25,17 @@ function LanguageChanger() {
           className="justify-content-end regulamin pulse"
           id="dropdown"
         >
-          <Trans trKey="JĘZYK">JĘZYK</Trans>
+          <Trans i18nKey="JĘZYK">JĘZYK</Trans>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item onClick={() => changeLanguage("pl")} className="pulse">
-            <Trans trKey="polish">Polska</Trans>
+            <Trans i18nKey="polish">Polska</Trans>
           </Dropdown.Item>
           <Dropdown.Item onClick={() => changeLanguage("uk")} className="pulse">
-            <Trans trKey="ukrainian">Ukrainian</Trans>
+            <Trans i18nKey="ukrainian">Ukrainian</Trans>
           </Dropdown.Item>
           <Dropdown.Item onClick={() => changeLanguage("en")} className="pulse">
-            <Trans trKey="english">English</Trans>
+            <Trans i18nKey="english">English</Trans>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>

@@ -12,7 +12,7 @@ function Regulamin() {
         className="justify-content-end regulamin pulse"
         onClick={() => setShow(true)}
       >
-        <Trans trKey = "Regulamin">
+        <Trans i18nKey = "Regulamin">
         Regulamin
         </Trans>
       </Button>
