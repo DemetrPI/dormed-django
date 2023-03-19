@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../../static/css/themeSwitcher.css";
+import { useTranslation } from "react-i18next";
 
 function ColorThemeSwitcher() {
   const [theme, setTheme] = useState("pink");
+  const { t } = useTranslation();
+
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
@@ -46,11 +49,11 @@ function ColorThemeSwitcher() {
     <div>
       <label htmlFor="theme-select"></label>
       <select id="theme-select" onChange={changeTheme} value={theme}>
-        SelectTheme
-        <option value="pink" id="pink">Pink</option>
-        <option value="blue" id= "blue">Blue</option>
-        <option value="green" id="green">Green</option>
-        <option value="dark" id="dark">Dark</option>
+        (t{"SelectTheme"})
+        <option value="pink" id="pink">{t("Pink")}</option>
+        <option value="blue" id= "blue">{t("Blue")}</option>
+        <option value="green" id="green">{t("Green")}</option>
+        <option value="dark" id="dark">{t("Dark")}</option>
       </select>
     </div>
   );

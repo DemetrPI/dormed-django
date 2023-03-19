@@ -13,6 +13,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Regulamin from "./Regulamin";
+// import RegulaminCopy from "../../RegulaminCopy";
 import { Routes, Route } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
@@ -53,7 +54,7 @@ const {t} = useTranslation();
             </Nav>
             <LanguageChanger/>
             <ColorThemeSwitcher />
-            <Regulamin />
+            <Regulamin/>
           </Navbar.Collapse>
         </Container>
       </Navbar>

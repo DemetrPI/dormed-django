@@ -53,7 +53,7 @@ function Home() {
 
         <div className="bgimg-1">
           <div className="caption">
-            <span className="spanBorder pulse">{t("Usuwanie zmarszczek, Kwas Hialuronowy, Botox")}</span>
+            <span className="spanBorder pulse">{t("USUWANIE ZMARZCZEK, KWAS HIALURONOWY, BOTOX")}</span>
           </div>
         </div>
       </div>

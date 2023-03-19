@@ -25,7 +25,7 @@ function Hero() {
             </a>
           </nav>
           <nav className="pt-2">
-            <span className="h5">(t{"Klinika"})  </span>
+            <span className="h5">{t("Klinika")}  </span>
             <a className="ms-3 pulse" href="tel:+48604596473">
               604 59 64 73
             </a>

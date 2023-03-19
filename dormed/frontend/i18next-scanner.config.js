@@ -3,12 +3,13 @@ var chalk = require('chalk');
 
 module.exports = {
     input: [
-        'src/Regulamin.js',
+        'src/**/*.{js,jsx}',
         // Use ! to filter out files or directories
         '!app/**/*.spec.{js,jsx}',
         '!app/i18n/**',
         '!**/node_modules/**',
     ],
+    
     output: './',
     options: {
         debug: true,
@@ -31,9 +32,9 @@ module.exports = {
             }
         },
         lngs: ['en','uk', 'pl'],
-        ns: 'translate',
+        ns: 'custom',
         defaultLng: 'pl',
-        defaultNs: 'translate',
+        defaultNs: 'custom',
         defaultValue: '__STRING_NOT_TRANSLATED__',
         resource: {
             loadPath: 'static/locales/{{lng}}/{{ns}}.json',
@@ -48,42 +49,23 @@ module.exports = {
             suffix: '}}'
         }
     },
-    customHandler: {
-        // Custom handler that adds t function around string
-        // and returns it as the new value
-        type: 'v3',
-        matcher: (key) => true,
-        handler: (key, options, ast) => {
-          const { value } = ast.node;
-    
-          // Check if the string already has t function around it
-          if (value.includes('t(') && value.includes(')')) {
-            return value;
-          }
-    
-          // Add t function around the string and return it
-          return `t("${value}")`;
-        },
-      },
+     transform: function customTransform(file, enc, done) {
+         "use strict";
+         const parser = this.parser;
+         const content = fs.readFileSync(file.path, enc);
+         let count = 0;
+         parser.parseFuncFromString(content, { list: ['i18next._', 'i18next.__'] }, (key, options) => {
+             parser.set(key, Object.assign({}, options, {
+                 nsSeparator: false,
+                 keySeparator: false
+             }));
+             ++count;
+         });
 
-    transform: function customTransform(file, enc, done) {
-        "use strict";
-        const parser = this.parser;
-        const content = fs.readFileSync(file.path, enc);
-        let count = 0;
+         if (count > 0) {
+             console.log(`i18next-scanner: count=${chalk.cyan(count)}, file=${chalk.yellow(JSON.stringify(file.relative))}`);
+         }
 
-        parser.parseFuncFromString(content, { list: ['i18next._', 'i18next.__'] }, (key, options) => {
-            parser.set(key, Object.assign({}, options, {
-                nsSeparator: false,
-                keySeparator: false
-            }));
-            ++count;
-        });
-
-        if (count > 0) {
-            console.log(`i18next-scanner: count=${chalk.cyan(count)}, file=${chalk.yellow(JSON.stringify(file.relative))}`);
-        }
-
-        done();
+         done();
     }
 };

@@ -11,10 +11,22 @@ i18n
     backend: {
       loadPath: "/static/locales/{{lng}}/{{ns}}.json",
     },
-    fallbackLng: false,
-    debug: true,
-    interpolation: {
-      escapeValue: false,
+    lng: "pl",
+    resources: {
+      pl: {
+        translation: require("../../static/locales/pl/trans.json"),
+      },
+      en: {
+        translation: require("../../static/locales/en/trans.json"),
+      },
+      uk: {
+        translation: require("../../static/locales/uk/trans.json"),
+      },
+      fallbackLng: false,
+      debug: true,
+      interpolation: {
+        escapeValue: false,
+      },
     },
   });
 
