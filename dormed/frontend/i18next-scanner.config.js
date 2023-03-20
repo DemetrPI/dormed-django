@@ -32,9 +32,9 @@ module.exports = {
             }
         },
         lngs: ['en','uk', 'pl'],
-        ns: 'custom',
+        ns: 'trans',
         defaultLng: 'pl',
-        defaultNs: 'custom',
+        defaultNs: 'trans',
         defaultValue: '__STRING_NOT_TRANSLATED__',
         resource: {
             loadPath: 'static/locales/{{lng}}/{{ns}}.json',
