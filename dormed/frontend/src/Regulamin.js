@@ -10,9 +10,9 @@ function Regulamin() {
 
   return (
     <>
-      <Nav.Item className="pulse" onClick={() => setShow(true)}>
+      <Nav.Link className="pulse" onClick={() => setShow(true)}>
         <Trans i18nKey="Regulamin">REGULAMIN</Trans>
-      </Nav.Item>
+      </Nav.Link>
       <Modal
         show={show}
         onHide={() => setShow(false)}
