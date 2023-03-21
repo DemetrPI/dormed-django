@@ -1,4 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
+import NavItem from 'react-bootstrap/NavItem';
+import NavLink from 'react-bootstrap/NavLink';
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
@@ -20,12 +22,9 @@ function LanguageChanger() {
 
   return (
     <>
-      <Dropdown>
-        <Dropdown.Toggle
-          className="justify-content-end regulamin pulse"
-          id="dropdown"
-        >
-          <Trans i18nKey="JĘZYK">JĘZYK</Trans>
+      <Dropdown as={NavItem}>
+        <Dropdown.Toggle as = {NavLink} className="pulse" id="dropdown"
+        ><Trans i18nKey="JĘZYK">JĘZYK</Trans>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item onClick={() => changeLanguage("pl")} className="pulse">

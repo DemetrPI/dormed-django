@@ -1,10 +1,10 @@
 import "../../static/css/custom.css";
 import React from "react";
-import { Trans, useTranslation } from "react-i18next";
+import {useTranslation } from "react-i18next";
 import dormedLogo from "../../static/images/dormed-logo.png";
 
 function Hero() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="hero">
       <div className="row ">
@@ -25,11 +25,10 @@ function Hero() {
             </a>
           </nav>
           <nav className="pt-2">
-            <span className="h5">{t("Klinika")}  </span>
+            <span className="h5">{t("Klinika")} </span>
             <a className="ms-3 pulse" href="tel:+48604596473">
               604 59 64 73
             </a>
-
             <a className="ms-3 pulse" href="tel:+48604596473">
               604 59 64 73
             </a>
@@ -38,7 +37,7 @@ function Hero() {
             </a>
           </nav>
         </div>
-      <hr className="border border-warning border-1" />
+        <hr className="border border-warning border-1" />
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../../static/css/themeSwitcher.css";
 import { useTranslation } from "react-i18next";
+import Dropdown from 'react-bootstrap/Dropdown';
+import NavItem from 'react-bootstrap/NavItem';
+import NavLink from 'react-bootstrap/NavLink';
 
 function ColorThemeSwitcher() {
   const [theme, setTheme] = useState("pink");
