@@ -19,40 +19,47 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { Trans, useTranslation } from "react-i18next";
 import Packages from "./Packages";
 
-
-
 function App() {
-
-const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       <Hero />
-      <Navbar
-        collapseOnSelect
-        expand="md"
-        sticky="top"
-      >
+      <Navbar collapseOnSelect expand="md" sticky="top">
         <Container>
           <Navbar.Toggle
             aria-controls="navbarScroll"
             data-bs-target="navbarScroll"
           />
           <Navbar.Collapse id="navbarScroll">
-            <Navbar.Brand href="/" className="pulse">
-              <FontAwesomeIcon icon={faHome} />
-            </Navbar.Brand>
             <Nav>
-              <Nav.Link href="/programs" className="pulse"><Trans i18nKey = "ZABIEGI">ZABIEGI</Trans></Nav.Link>
-              <Nav.Link href="/programs" className="pulse"><Trans i18nKey="REHABILITACIA">REHABILITACIA</Trans></Nav.Link>
-              <Nav.Link href="/packages" className="pulse"><Trans i18nKey="PAKIETY">PAKIETY</Trans></Nav.Link> 
-              <Nav.Link href="/prices" className="pulse"><Trans i18nKey="CENY">CENY</Trans></Nav.Link>
-              <Nav.Link href="/booking" className="pulse"><Trans i18nKey="REZERWACIJA">REZERWACIJA</Trans></Nav.Link>
-              <Nav.Link href="/about" className="pulse"><Trans i18nKey = "INFORMACJE">INFORMACJE</Trans></Nav.Link>
-              <Nav.Link href="/contacts" className="pulse"><Trans i18nKey = "KONTAKTY">KONTAKTY</Trans></Nav.Link>
-              <Nav.Link href="/news" className="pulse"><Trans i18nKey = "AKTUALNOŚCI">AKTUALNOŚCI</Trans></Nav.Link>
-            <LanguageChanger/>
-            <ColorThemeSwitcher />
-            <Regulamin/>
+              <Nav.Link href="/" className="pulse">
+                <FontAwesomeIcon icon={faHome} />
+              </Nav.Link>
+              <Nav.Link href="/programs" className="pulse">
+                <Trans i18nKey="ZABIEGI">ZABIEGI</Trans>
+              </Nav.Link>
+              <Nav.Link href="/packages" className="pulse">
+                <Trans i18nKey="PAKIETY">PAKIETY</Trans>
+              </Nav.Link>
+              <Nav.Link href="/prices" className="pulse">
+                <Trans i18nKey="CENY">CENY</Trans>
+              </Nav.Link>
+              <Nav.Link href="/booking" className="pulse">
+                <Trans i18nKey="REZERWACIJA">REZERWACIJA</Trans>
+              </Nav.Link>
+              <Nav.Link href="/about" className="pulse">
+                <Trans i18nKey="INFORMACJE">INFORMACJE</Trans>
+              </Nav.Link>
+              <Nav.Link href="/contacts" className="pulse">
+                <Trans i18nKey="KONTAKTY">KONTAKTY</Trans>
+              </Nav.Link>
+              <Nav.Link href="/news" className="pulse">
+                <Trans i18nKey="NEWS">NEWS</Trans>
+              </Nav.Link>
+              
+              <LanguageChanger />
+              <ColorThemeSwitcher />
+              <Regulamin />
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -65,7 +72,7 @@ const {t} = useTranslation();
         <Route path="/booking" element={<Booking />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>
-        <Route path="/contacts" element={<News />}></Route>
+        <Route path="/news" element={<News />}></Route>
       </Routes>
     </>
   );

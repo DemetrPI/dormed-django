@@ -26,17 +26,17 @@ from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include ('dormed_main.urls')),
     path('', include('frontend.urls')),
     re_path(r'^api/prices/$', views.price_list),
     re_path(r'^api/programs/$', views.program_list),
+    re_path(r'^api/news/$', views.news_list),
     re_path(r'^api/prices/([0-9])$', views.price_detail),
     re_path(r'^api/programs/([0-9])$', views.program_detail),
+    re_path(r'^api/news/([0-9])$', views.news_detail),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns (
-    path('', include('dormed_main.urls')),
     path('', include('frontend.urls')),
 )
 if settings.DEBUG:

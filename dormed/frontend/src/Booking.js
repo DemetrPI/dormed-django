@@ -16,8 +16,6 @@ const importAll = (r) => {
 
 importAll(require.context("../static/images/rooms/", false, /\.(png|jpe?g|svg)$/));
 
-
-
 const Booking = () => {
   const { t } = useTranslation();
     return (
@@ -38,6 +36,29 @@ const Booking = () => {
           autoPlay={true}
           thumbnailPosition={"bottom"}
           />
+<div className="dormedDescription ms-3">
+<h3 className="text-center">{t("W celu rezerwacji proszę skontaktować się z nami:")}</h3>
+
+<p>{t("kom. 600 45 46 35")}</p>
+<p>{t("kom. 604 59 64 73")}</p>
+<p>{t("kom. 606 43 03 65")}</p>
+<p>{t("tel. 41 378 23 18")}</p>
+<p>Email: <a href="mailto: willa@salondorotka.pl">willa@salondorotka.pl</a></p>
+<p>Email: <a href="mailto: willadorotka@gmail.com">willadorotka@gmail.com</a></p>
+
+<h3 className="text-center">{t(" Nasz system rezerwacyjny wymaga wpłaty zadatku w wysokości do 30% kwoty rezerwacji. Po dokonaniu wpłaty rezerwacja uznawana jest za GWARANTOWANĄ.")}</h3>
+<h4>{t("Płatności można dokonać:")}</h4>
+<p>{t("wpłacając zadatek na konto firmy:")}</p>
+<p>"Dormed Medical Spa"</p>
+<p>"ul. Rokosza 5"</p>
+<p>"28-100 Busko Zdrój"</p>
+<p>{t("Konto")}</p>
+<p>33 1140 2004 0000 3102 4179 0650</p>
+<p>
+  {t("w tytule przelewu proszę podać okres pobytu, ilość osób i obiekt Willa Dorotka lub Dormed Medical SPA")}
+</p>
+
+</div>
         <Footer />
       </div>
     );

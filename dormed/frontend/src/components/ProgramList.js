@@ -31,7 +31,8 @@ const ProgramList = ({ programs }) => {
                 <Accordion.Body>
                 <h4>{program[`description_${currentLanguage}`]}</h4>
                 <p>{program[`results_${currentLanguage}`]}</p>
-                  <Button>
+                  <Button
+                  className="accordBtn">
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
                     <Trans i18nKey = "order">Zamów!</Trans>
                     </a>

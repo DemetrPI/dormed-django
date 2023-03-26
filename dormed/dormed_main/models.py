@@ -11,10 +11,20 @@ class Program(models.Model):
         return self.title
 
 class Price(models.Model):
-    item = models.CharField("Rodzaj zabiegu",max_length=150, unique=True)
-    price_others = models.CharField("Cena, PLN",max_length=20,null=True, blank=True)
-    
+    position = models.CharField("Item name",max_length=150, unique=True)
+    price = models.CharField("Item price",max_length=20,null=True, blank=True)
+        
+    def __str__(self):
+        return self.position
+
+class HotelNews(models.Model):
+    title = models.CharField("Title", max_length=100)
+    header = models.CharField("Header", max_length=200)
+    description = models.TextField("Description")
+    features = models.TextField("Features and what incuded")
+    posted_on = models.DateField("Posted on", default='2000-01-01')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.item
-    
+        return self.title

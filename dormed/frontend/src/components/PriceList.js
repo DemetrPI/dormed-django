@@ -31,8 +31,8 @@ function PriceList({ prices, filteredItems }) {
             itemsToRender.map((price, index) => (
               <tr key={price.pk}>
                 <td>{index + 1}</td>
-                <td>{price[`item_${currentLanguage}`]}</td>
-                <td>{price.price_others}</td>
+                <td>{price[`position_${currentLanguage}`]}</td>
+                <td>{price.price}</td>
                 <td>
                   <Button>
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">

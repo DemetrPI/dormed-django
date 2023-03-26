@@ -6,7 +6,7 @@ import { Instagram, Twitter, Facebook } from "react-bootstrap-icons";
 import { Trans, useTranslation } from "react-i18next";
 
 function Footer() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <footer className="py-2">
       <hr className="border border-warning border-1" />
@@ -16,18 +16,33 @@ function Footer() {
           <img src={orly} height={48}></img>
         </div>
         <div className="col-6 col-md text-center">
-        <h5><Trans i18nKey = "address">Adres</Trans></h5>
-          
+          <h5>
+            <Trans i18nKey="address">Adres</Trans>
+          </h5>
+
           <ul className="list-unstyled text-small">
-            <li className="ms-3 pulse"><Trans i18nKey="street">ul. Rokosza 5</Trans></li>
-            <li className="ms-3 pulse"><Trans i18nKey="city">28-100 Busko Zdrój</Trans></li>
+            <li className="ms-3 pulse">
+              <Trans i18nKey="street">ul. Rokosza 5</Trans>
+            </li>
+            <li className="ms-3 pulse">
+              <Trans i18nKey="city">28-100 Busko Zdrój</Trans>
+            </li>
+            <li>
+              <a className="ms-3 pulse" href="mailto:willa@salondorotka.pl">
+                willa@salondorotka.pl
+              </a>
+            </li>
+            <li>
+              <a className="ms-3 pulse" href="mailto:willadorotka@gmail.com">
+                willadorotka@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
         <div className="col-6 col-md text-center">
           <h5>{t("Recepcja")}</h5>
           <ul className="list-unstyled text-small">
-            <li>
-            </li>
+            <li></li>
             <li>
               <a className="ms-3 pulse" href="tel:+48600454635">
                 600 45 46 35
@@ -37,8 +52,8 @@ function Footer() {
               <a className="ms-3 pulse" href="tel:+48604596473">
                 604 59 64 73
               </a>
-              </li>
-              <li>
+            </li>
+            <li>
               <a className="ms-3 pulse" href="tel:+48413782318">
                 41 378 23 18
               </a>
@@ -49,11 +64,11 @@ function Footer() {
           <h5>{t("Klinika")}</h5>
           <ul className="list-unstyled text-small">
             <li>
-            <a className="ms-3 pulse" href="tel:+48600454635">
+              <a className="ms-3 pulse" href="tel:+48600454635">
                 600 45 46 35
               </a>
-              </li>
-              <li>
+            </li>
+            <li>
               <a className="ms-3 pulse" href="tel:+48604596473">
                 604 59 64 73
               </a>

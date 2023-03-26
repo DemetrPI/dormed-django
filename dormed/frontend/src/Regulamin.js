@@ -11,7 +11,7 @@ function Regulamin() {
   return (
     <>
       <Nav.Link className="pulse" onClick={() => setShow(true)}>
-        <Trans i18nKey="Regulamin">REGULAMIN</Trans>
+        <Trans i18nKey="REGULAMIN">REGULAMIN</Trans>
       </Nav.Link>
       <Modal
         show={show}
@@ -102,7 +102,7 @@ function Regulamin() {
               <p> {t("Osoby nie zameldowane")}</p>
             </li>
             <li>
-              {t(" Obowiązywanie ciszy nocnej")}
+              {t("Obowiązywanie ciszy nocnej")}
               <p>{t("spokojnego pobytu")}</p>
             </li>
             <li>
@@ -114,7 +114,7 @@ function Regulamin() {
                     willadorotka@gmail.com
                   </a>
                 </span>{" "}
-                lub{" "}
+                {t("lub")}{" "}
                 <span>
                   <a href="mailto:salon@salondorotka.pl">
                     salon@salondorotka.pl
