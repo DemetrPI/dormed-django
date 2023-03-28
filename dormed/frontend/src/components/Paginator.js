@@ -5,7 +5,7 @@ import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 const Paginator = ({ currentPage, totalPages, handlePageChange }) => {
   return (
-    <div className="text-center">
+<div className="d-flex justify-content-center">
       <Pagination size="sm">
         <PaginationItem>
           <PaginationLink first onClick={() => handlePageChange(1)} />
@@ -22,7 +22,7 @@ const Paginator = ({ currentPage, totalPages, handlePageChange }) => {
             <PaginationItem key={pageNumber}>
               <PaginationLink
                 onClick={() => handlePageChange(pageNumber)}
-                active={currentPage === pageNumber}
+                active= {String(currentPage === pageNumber)}
               >
                 {pageNumber}
               </PaginationLink>
@@ -40,7 +40,9 @@ const Paginator = ({ currentPage, totalPages, handlePageChange }) => {
           <PaginationLink last onClick={() => handlePageChange(totalPages)} />
         </PaginationItem>
       </Pagination>
-    </div>
+      </div>
   );
 };
 export default Paginator;
+
+

@@ -1,27 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProgramList from "./components/ProgramList";
 import ProgramCarousel from "./components/Carousel";
 import Footer from "./components/Footer";
 import { Container } from "reactstrap";
 import { PROGRAM_API_URL } from "./constants";
 import { ImagesForSliders } from "./components/imagesForSlides";
-import axios from "axios";
+import { useApi } from "./components/customHook";
+import Search from "./components/Search";
+import { useTranslation } from "react-i18next";
 
 function Program() {
-  const [programs, setPrograms] = useState([]);
+  const [programs, error, fetchData] = useApi(PROGRAM_API_URL);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   useEffect(() => {
-    getPrograms();
-  }, []);
-
-  const getPrograms = () => {
-    axios.get(PROGRAM_API_URL)
-      .then(res => setPrograms(res.data))
-      .catch(error => console.error(error));
-  };
+    fetchData();
+  }, [fetchData]);
 
   const resetState = () => {
-    getPrograms();
+    fetchData();
+  };
+
+  const handleSearch = (query) => {
+    const filteredItems = programs.filter((programs) =>
+      programs[`title_${currentLanguage}`]
+        .toLowerCase()
+        .includes(query.toLowerCase())
+    );
+    setFilteredItems(filteredItems);
   };
 
   return (
@@ -30,10 +38,16 @@ function Program() {
         <div className="p-5 shadow-lg">
           <ProgramCarousel data={ImagesForSliders} />
         </div>
-        <ProgramList
-          programs={programs}
-          resetState={resetState}
-        />
+        <Search onSearch={handleSearch} />
+        {error ? (
+          <div>Error: {error.message}</div>
+        ) : (
+          <ProgramList
+            programs={programs}
+            filteredItems={filteredItems}
+            resetState={resetState}
+          />
+        )}
       </Container>
       <Footer />
     </>

@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { PRICE_API_URL } from "./constants";
-import Footer from './components/Footer';
+import { useApi } from "./components/customHook";
+import Footer from "./components/Footer";
 import PriceList from "./components/PriceList";
-import axios from "axios";
 import Search from "./components/Search";
 
-
 function Price() {
-  const [prices, setPrices] = useState([]);
+  const [prices, error, fetchData] = useApi(PRICE_API_URL);
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
-    resetState();
-  }, []);
-
-  const getPrices = () => {
-    axios.get(PRICE_API_URL).then((res) => setPrices(res.data));
-  };
-
-  const resetState = () => {
-    getPrices();
-  };
+    fetchData();
+  }, [fetchData]);
 
   const handleSearch = (query) => {
     const filteredItems = prices.filter((item) =>
@@ -31,14 +22,18 @@ function Price() {
     );
     setFilteredItems(filteredItems);
   };
-  
+
   return (
     <>
-      <Search onSearch={handleSearch}/> 
+      <Search onSearch={handleSearch} />
       <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col>
-            <PriceList prices={prices} filteredItems={filteredItems} />
+            {error ? (
+              <div>Error: {error.message}</div>
+            ) : (
+              <PriceList prices={prices} filteredItems={filteredItems} />
+            )}
           </Col>
         </Row>
       </Container>

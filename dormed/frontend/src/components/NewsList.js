@@ -2,6 +2,7 @@ import React from "react";
 import "../../static/css/custom.css";
 import "../../static/css/news.css";
 import { useTranslation } from "react-i18next";
+import { Container } from "reactstrap";
 
 const NewsList = ({ news }) => {
   const { t, i18n } = useTranslation();
@@ -10,7 +11,7 @@ const NewsList = ({ news }) => {
   return (
     <>
       {!news || news.length <= 0 ? (
-        <div className="container">
+        <Container>
           <section className="row tm-section-mb tm-section-2">
             <div className="col-md-12 tm-section-2-inner">
               <div className="tm-section-2-left">
@@ -26,10 +27,10 @@ const NewsList = ({ news }) => {
               </div>
             </div>
           </section>
-        </div>
+        </Container>
       ) : (
         news.map((news) => (
-          <div className="container">
+          <Container key={news.pk}>
             <section className="row tm-section-mb tm-section-2">
               <div className="col-md-12 tm-section-2-inner">
                 <div className="tm-section-2-left">
@@ -54,10 +55,9 @@ const NewsList = ({ news }) => {
                 </div>
               </div>
             </section>
-          </div>
+          </Container>
         ))
       )}
-
     </>
   );
 };

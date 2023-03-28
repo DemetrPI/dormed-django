@@ -7,6 +7,7 @@ import "../static/css/custom.css";
 import "../static/css/news.css";
 import Paginator from "./components/Paginator";
 
+
 function News() {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
