@@ -22,5 +22,5 @@ class HotelNewsSerializer(serializers.ModelSerializer):
                   'description','description_uk', 'description_pl','description_en', 
                   'header','header_uk','header_pl','header_en',
                   'features','features_uk','features_pl','features_en',
-                  'posted_on',
+                  'posted_on','image_left', 'image_right'
                   )

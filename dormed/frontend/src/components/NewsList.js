@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../static/css/custom.css";
 import "../../static/css/news.css";
 import { useTranslation } from "react-i18next";
@@ -8,10 +8,35 @@ const NewsList = ({ news }) => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
+  const [bgImageLeft, setBgImageLeft] = useState("url('static/images/green-tree-red-cup.jpg')");
+  const [bgImageRight, setBgImageRight] = useState("url('static/images/girl-01.jpg')");
+
+
+  useEffect(() => {
+    if (news && news.length > 0) {
+      if (news[0].image_left) {
+        setBgImageLeft(`url('${news[0].image_left}')`);
+      } else {
+        setBgImageLeft(`url('static/images/green-tree-red-cup.jpg')`);
+      }
+      if (news[0].image_right) {
+        setBgImageRight(`url('${news[0].image_right}')`);
+      } else {
+        setBgImageRight(`url('static/images/girl-01.jpg')`);
+      }
+    } else {
+      setBgImageLeft(`url('static/images/green-tree-red-cup.jpg')`);
+      setBgImageRight(`url('static/images/girl-01.jpg')`);
+    }
+  }, [news]);
+  
   return (
     <>
+      {/* Use the CSS variables in the CSS class definitions */}
+      <style>{`.tm-img-container-1 { background-image: ${bgImageLeft}; }`}</style>
+      <style>{`.tm-img-container-2 { background-image: ${bgImageRight}; }`}</style>
       {!news || news.length <= 0 ? (
-        <Container>
+        <Container >
           <section className="row tm-section-mb tm-section-2">
             <div className="col-md-12 tm-section-2-inner">
               <div className="tm-section-2-left">
@@ -30,7 +55,7 @@ const NewsList = ({ news }) => {
         </Container>
       ) : (
         news.map((news) => (
-          <Container key={news.pk}>
+          <Container key={news.pk} className="mt-3">
             <section className="row tm-section-mb tm-section-2">
               <div className="col-md-12 tm-section-2-inner">
                 <div className="tm-section-2-left">

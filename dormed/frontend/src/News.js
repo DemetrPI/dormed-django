@@ -3,8 +3,6 @@ import axios from "axios";
 import Footer from "./components/Footer";
 import { NEWS_API_URL } from "./constants";
 import NewsList from "./components/NewsList";
-import "../static/css/custom.css";
-import "../static/css/news.css";
 import Paginator from "./components/Paginator";
 
 

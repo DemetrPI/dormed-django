@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'frontend',
-    'csvimport.app.CSVImportConf',
+
 ]
 
 MIDDLEWARE = [
@@ -93,6 +93,7 @@ DATABASES = {
         'HOST':'localhost',
         'PASSWORD': 'TzpSjia4gm2hpxA'
         
+        
     }
 }
 
@@ -133,7 +134,6 @@ LANGUAGES = (
 LOCALE_PATHS = (os.path.join(BASE_DIR,'locale/'),)
 
 
-
 TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
@@ -145,11 +145,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     'frontend/static',
-#     'frontend/static/frontend'
+STATICFILES_DIRS = [
+    'frontend/static',
+    'frontend/static/frontend',
+    'frontend/static/images',
+]    
     
-     
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')   
+MEDIA_URL = '/media/'
+
+# how to write `MEDIA_ROOT` if my media files are saved in `C:\IT\dormed-django\dormed\frontend\static\media`, where dormed - is a root directory of my project?
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

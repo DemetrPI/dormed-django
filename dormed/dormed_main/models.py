@@ -22,9 +22,16 @@ class HotelNews(models.Model):
     header = models.CharField("Header", max_length=200)
     description = models.TextField("Description")
     features = models.TextField("Features and what incuded")
+    image_left = models.ImageField(upload_to='', null=True, blank=True)
+    image_right = models.ImageField(upload_to='', null=True, blank=True)
     posted_on = models.DateField("Posted on", default='2000-01-01')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
+    
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Hotel News'
+        verbose_name_plural = 'Hotel News'
