@@ -11,7 +11,7 @@ function Packages() {
   return (
     <>
       <div className="tm-container mx-auto">
-        <section className="tm-section tm-section-1">
+        <section className="tm-sector tm-sector-1">
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
@@ -29,7 +29,7 @@ function Packages() {
                   <p className="text-center mt-4 mb-0">
                     <a
                       data-scroll
-                      href="#tm-section-2"
+                      href="#tm-sector-2"
                       className="btn tm-btn-secondary"
                     >
                       {t("Continue...")}
@@ -40,10 +40,10 @@ function Packages() {
             </div>
           </div>
         </section>
-        <section id="tm-section-2" className="tm-section pt-2 pb-2">
+        <section id="tm-sector-2" className="tm-sector pt-2 pb-2">
           <div className="container">
             <div className="row">
-              <div className="col-xl-5 col-lg-6 tm-flex-center-v tm-text-container tm-section-left">
+              <div className="col-xl-5 col-lg-6 tm-flex-center-v tm-text-container tm-sector-left">
                 <h4>{t("Rehabilitacja 7 dni (6 noclegów i 18 zabiegów)")}</h4>
                 <p>{t("Willa Dorotka - 960 zl/doba")}</p>
                 <p>{t("Dormed Medical Spa - 1080 zł/osoba")}</p>
@@ -51,7 +51,7 @@ function Packages() {
                 <p>{t("Willa Dorotka - 2080 zl/doba")}</p>
                 <p>{t("Dormed Medical Spa - 2340 zł/osoba")}</p>
                 <p className="text-right mb-0">
-                  <a href="#tm-section-3" className="btn tm-btn-secondary">
+                  <a href="#tm-sector-3" className="btn tm-btn-secondary">
                     {t("Continue...")}
                   </a>
                 </p>
@@ -66,10 +66,10 @@ function Packages() {
             </div>
           </div>
         </section>
-        <section id="tm-section-3" className="tm-section tm-section-3">
+        <section id="tm-sector-3" className="tm-sector tm-sector-3">
           <div className="container">
             <div className="row">
-              <div className="col-sm-12 tm-section-2-right">
+              <div className="col-sm-12 tm-sector-2-right">
                 <div className="tm-bg-circle-white tm-bg-circle-pad-2 tm-flex-center-v">
                   <header className="text-center">
                     <h2 className="tm-color-primary">
@@ -99,7 +99,7 @@ function Packages() {
                     <li> {t("3 zabiegi dziennie z listy do wyboru:")} </li>
                   </ul>
                   <p className="text-center mb-0">
-                    <a href="#tm-section-4" className="btn tm-btn-secondary">
+                    <a href="#tm-sector-4" className="btn tm-btn-secondary">
                       {t("Continue...")}
                     </a>
                   </p>
@@ -108,17 +108,17 @@ function Packages() {
             </div>
           </div>
         </section>
-        <section id="tm-section-4" className="tm-section pt-2 pb-3">
+        <section id="tm-sector-4" className="tm-sector pt-2 pb-3">
           <div className="container">
             <div className="row">
-              <div className="col-xl-4 col-lg-4 tm-flex-center-v tm-section-left">
+              <div className="col-xl-4 col-lg-4 tm-flex-center-v tm-sector-left">
                 <p>
                   {t(
                     "Kąpiel siarczkowa, Kąpiel w zawiesinie borowinowej, Kapiel mineralna, Kąpiel solankowa, Kąpiel kwasowęglowa, Inhalacja, Kuracja pitna wodą siarczkową, Jonoforeza 10 min, Galwanizacja 10 min, Diadynamik, Prądy Nemeca, Prądy Traberta, Prądy Tensa, Prądy Kotza, Elektrostymulacja/Pulsatronic, Prądy interferencyjne, Magnetronik, Ultradźwięki, Sonoforeza/Fonoforeza, Laseroterapia, Sollux,Plastry borowinowe, Krioterapia miejscowa, masaż klasyczny 15 min, Gimnastyka, Masaż nefrytowy 20 min, Masaż turmalinowy 15 min, Hydrojet 20 min, Łóżko BMS terapia biomechaniczna 15 min, Masaż ondulacyjny 15 min, Fotel masujący 15 min, Platforma wibracyjna BMS 10 min, Masaż wibracyjny 10 min, Masaż stóp z podczerwienią,"
                   )}
                 </p>
                 <p className="text-center mb-0">
-                  <a href="#tm-section-5" className="btn tm-btn-secondary">
+                  <a href="#tm-sector-5" className="btn tm-btn-secondary">
                     {t("Continue...")}
                   </a>
                 </p>
@@ -134,10 +134,10 @@ function Packages() {
           </div>
         </section>
 
-        <section id="tm-section-5" className="tm-section tm-section-5">
+        <section id="tm-sector-5" className="tm-sector tm-sector-5">
           <div className="container">
             <div className="row">
-              <div className="col-sm-12 tm-section-2-right">
+              <div className="col-sm-12 tm-sector-2-right">
                 <div className="tm-bg-circle-white tm-bg-circle-pad-2 tm-flex-center-v">
                   <h3 className="text-center">{t("Możliwość bezpłatnego korzystania:")}</h3>
                   <ul className="dashed">
@@ -158,7 +158,7 @@ function Packages() {
                   </p>
 
                   <p className="text-center mb-0">
-                    <a href="#tm-section-6" className="btn tm-btn-secondary">
+                    <a href="#tm-sector-6" className="btn tm-btn-secondary">
                       {t("Continue...")}
                     </a>
                   </p>
@@ -168,10 +168,10 @@ function Packages() {
           </div>
         </section>
 
-        <section id="tm-section-6" className="tm-section pt-2 pb-3">
+        <section id="tm-sector-6" className="tm-sector pt-2 pb-3">
           <div className="container">
             <div className="row">
-              <div className="col-xl-4 col-lg-4 tm-flex-center-v tm-section-left">
+              <div className="col-xl-4 col-lg-4 tm-flex-center-v tm-sector-left">
                 <p>
                   {t(
                     "Pobyt rozpoczyna się o godzinie 15 w dniu przyjazdu, a kończy o godzinie 12 w dniu wyjazdu.Rezerwację pobytu, uważa się za dokonaną po uprzednim uzgodnieniu rodzaju pokoju oraz wpłaceniu zadatku w wysokości 100,00 zł od osoby. W przypadku rezygnacji zadatek przepada. Cena pakietu zawiera podatek VAT.Parking niestrzeżony monitorowany na terenie Willi, liczba miejsc parkingowych ograniczona - nie jest możliwa wcześniejsza rezerwacja w cenie 10 zł/doba lun 40 zł/tydzień lub parking bezpłatny ogólnodostepny naprzeciwko pensjonatu Dormed Medical SPA"

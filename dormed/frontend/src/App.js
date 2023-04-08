@@ -1,78 +1,78 @@
 import React from "react";
-import Home from "./Home";
+import { Routes, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import Hero from "./components/Hero";
-import ColorThemeSwitcher from "./components/ThemeSwitcher";
 import LanguageChanger from "./components/LanguageChanger";
+import ColorThemeSwitcher from "./components/ThemeSwitcher";
+import Regulamin from "./Regulamin";
+import Home from "./Home";
 import About from "./About";
 import Contacts from "./Contacts";
 import Program from "./Programs";
 import Prices from "./Prices";
 import Booking from "./Booking";
 import News from "./News";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Regulamin from "./Regulamin";
-import { Routes, Route } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { Trans, useTranslation } from "react-i18next";
 import Packages from "./Packages";
 
 function App() {
   const { t } = useTranslation();
+
   return (
     <>
-      <Hero />
-      <Navbar collapseOnSelect expand="md" sticky="top">
-        <Container>
+      <Container fluid className="justify-content-center align-items-center">
+        <Hero />
+        <Navbar collapseOnSelect expand="md" sticky="top">
           <Navbar.Toggle
             aria-controls="navbarScroll"
             data-bs-target="navbarScroll"
           />
           <Navbar.Collapse id="navbarScroll">
             <Nav>
-              <Nav.Link href="/" className="pulse">
+              <Nav.Link as={Link} to="/" className="pulse">
                 <FontAwesomeIcon icon={faHome} />
               </Nav.Link>
-              <Nav.Link href="/programs" className="pulse">
-                <Trans i18nKey="ZABIEGI">ZABIEGI</Trans>
+              <Nav.Link as={Link} to="/programs" className="pulse">
+                {t("ZABIEGI")}
               </Nav.Link>
-              <Nav.Link href="/packages" className="pulse">
-                <Trans i18nKey="PAKIETY">PAKIETY</Trans>
+              <Nav.Link as={Link} to="/packages" className="pulse">
+                {t("PAKIETY")}
               </Nav.Link>
-              <Nav.Link href="/prices" className="pulse">
-                <Trans i18nKey="CENY">CENY</Trans>
+              <Nav.Link as={Link} to="/prices" className="pulse">
+                {t("CENY")}
               </Nav.Link>
-              <Nav.Link href="/booking" className="pulse">
-                <Trans i18nKey="REZERWACIJA">REZERWACIJA</Trans>
+              <Nav.Link as={Link} to="/booking" className="pulse">
+                {t("REZERWACJA")}
               </Nav.Link>
-              <Nav.Link href="/about" className="pulse">
-                <Trans i18nKey="INFORMACJE">INFORMACJE</Trans>
+              <Nav.Link as={Link} to="/about" className="pulse">
+                {t("INFORMACJE")}
               </Nav.Link>
-              <Nav.Link href="/contacts" className="pulse">
-                <Trans i18nKey="KONTAKTY">KONTAKTY</Trans>
+              <Nav.Link as={Link} to="/contacts" className="pulse">
+                {t("KONTAKTY")}
               </Nav.Link>
-              <Nav.Link href="/news" className="pulse">
-                <Trans i18nKey="NEWS">NEWS</Trans>
+              <Nav.Link as={Link} to="/news" className="pulse">
+                {t("NEWS")}
               </Nav.Link>
-              
               <LanguageChanger />
               <ColorThemeSwitcher />
               <Regulamin />
             </Nav>
           </Navbar.Collapse>
-        </Container>
-      </Navbar>
+        </Navbar>
+      </Container>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/programs" element={<Program />}></Route>
-        <Route path="/prices" element={<Prices />}></Route>
-        <Route path="/packages" element={<Packages />}></Route>
-        <Route path="/booking" element={<Booking />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/contacts" element={<Contacts />}></Route>
-        <Route path="/news" element={<News />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/programs" element={<Program />} />
+        <Route path="/prices" element={<Prices />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/news" element={<News />} />
       </Routes>
     </>
   );
