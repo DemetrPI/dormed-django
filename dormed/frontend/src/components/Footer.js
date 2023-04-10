@@ -4,18 +4,14 @@ import { Row, Col } from "reactstrap";
 import { Instagram, Twitter, Facebook } from "react-bootstrap-icons";
 import { Trans, useTranslation } from "react-i18next";
 import dormedLogo from "../../static/images/dormed-logo.png";
-import orly from "../../static/images/orly.png";
+
 
 function Footer() {
   const { t } = useTranslation();
   return (
     <footer className="py-2">
       <hr className="border border-warning border-1" />
-      <Row lg="6" sm="2" xs="1">
-        <Col>
-          <img src={dormedLogo} height={48} />
-          <img src={orly} height={48} />
-        </Col>
+      <Row lg="5" sm="2" xs="1">
         <Col className="text-center">
           <h5>
             <Trans i18nKey="address">Adres</Trans>
@@ -89,9 +85,9 @@ function Footer() {
             <li className="pulse">33114020040000310241790650</li>
           </ul>
         </Col>
-        <Col className="text-center">
+        <Col className="text-center col-sm-12">
           <h5>{t("Socials")}</h5>
-          <ul className="list-unstyled">
+          <ul className="list-unstyled socials">
             <li className="pulse">
               <a href="#">
                 <Instagram size={24} />
@@ -111,9 +107,12 @@ function Footer() {
         </Col>
       </Row>
       <hr className="border border-warning border-1" />
-      <Row>
+      <Row lg="2" sm="2" xs="1">
+      <Col>
+          <img src={dormedLogo} className="footerLogo rotate" height={48} />
+        </Col>
         <Col>
-          <p className="text-center">© 2023 Dormed</p>
+         <p>© 2023 Dormed</p>
         </Col>
       </Row>
     </footer>

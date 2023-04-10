@@ -50,8 +50,8 @@ function Program() {
 
   return (
     <>
-      <Container style={{ marginTop: "20px" }}>
-        <div className="p-5 shadow-lg">
+      <Container fluid style={{ marginTop: "20px" }}>
+        <div className="p-lg-5 p-md-3 p-xs-1 shadow-lg">
           <ProgramCarousel data={ImagesForSliders} />
         </div>
         <Search onSearch={handleSearch} />

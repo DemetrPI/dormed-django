@@ -6,12 +6,12 @@ import { Trans } from "react-i18next";
 
 function PriceList({ prices, filteredItems }) {
   const itemsToRender = filteredItems.length ? filteredItems : prices;
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
   return (
     <div>
-      <Table striped bordered className="table-success" responsive>
+      <Table striped bordered responsive>
         <thead className="tableHead">
           <tr>
             <th>#</th>

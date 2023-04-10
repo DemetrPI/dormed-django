@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../../static/css/custom.css";
 import "../../static/css/news.css";
 import { useTranslation } from "react-i18next";
-import { Container } from "reactstrap";
 
 const NewsList = ({ news }) => {
   const { t, i18n } = useTranslation();
@@ -36,7 +35,7 @@ const NewsList = ({ news }) => {
       <style>{`.tm-img-container-1 { background-image: ${bgImageLeft}; }`}</style>
       <style>{`.tm-img-container-2 { background-image: ${bgImageRight}; }`}</style>
       {!news || news.length <= 0 ? (
-        <Container >
+        <div>
           <section className="row tm-section-mb tm-section-2">
             <div className="col-md-12 tm-section-2-inner">
               <div className="tm-section-2-left">
@@ -45,17 +44,17 @@ const NewsList = ({ news }) => {
               </div>
               <div className="tm-section-2-right tm-bg-primary">
                 <div className="tm-section-2-text">
-                  <h2 className="tm-section-2-header tm-mb-45">
+                  <h2 className="tm-section-2-header tm-mb-45 text-center">
                     {t("No news yet!")}
                   </h2>
                 </div>
               </div>
             </div>
           </section>
-        </Container>
+        </div>
       ) : (
         news.map((news) => (
-          <Container key={news.pk} className="mt-3">
+          <div key={news.pk} className="mt-3">
             <section className="row tm-section-mb tm-section-2">
               <div className="col-md-12 tm-section-2-inner">
                 <div className="tm-section-2-left">
@@ -64,7 +63,7 @@ const NewsList = ({ news }) => {
                 </div>
                 <div className="tm-section-2-right tm-bg-primary">
                   <div className="tm-section-2-text">
-                    <h2 className="tm-section-2-header tm-mb-45">
+                    <h2 className="tm-section-2-header tm-mb-45 text-center">
                       {news[`title_${currentLanguage}`]}
                     </h2>
                     <h4 className="text-center mt-2">
@@ -80,7 +79,7 @@ const NewsList = ({ news }) => {
                 </div>
               </div>
             </section>
-          </Container>
+     </div>
         ))
       )}
     </>

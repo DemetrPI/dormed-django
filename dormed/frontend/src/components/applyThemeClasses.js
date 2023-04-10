@@ -4,7 +4,7 @@ export const applyThemeClasses = (themeName) => {
     document.body.classList.remove(...themeClasses);
     document
       .querySelectorAll(
-        ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6"
+        ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6, table, td, th"
       )
       .forEach((element) => {
         element.classList.remove(...themeClasses);
@@ -13,7 +13,7 @@ export const applyThemeClasses = (themeName) => {
     document.body.classList.add(themeName);
     document
       .querySelectorAll(
-        ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6"
+        ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6, table, td, th"
       )
       .forEach((element) => {
         element.classList.add(themeName);

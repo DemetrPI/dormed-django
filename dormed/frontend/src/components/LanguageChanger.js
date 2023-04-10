@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
 function LanguageChanger() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");

@@ -12,11 +12,7 @@ function Hero() {
       <Container fluid>
         <Row className="justify-content-center align-items-center">
           <Col xs="12" md="auto" className="text-center mb-3 mb-md-0">
-            <img
-              src={dormedLogo}
-              height={window.innerWidth < 768 ? 96 : 64}
-              className="rotate"
-            />
+          <img src={dormedLogo} className="rotate headerImage" />
           </Col>
           <Col xs="12" md="auto">
             <nav className="pt-2">

@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { NEWS_API_URL } from "./constants";
 import NewsList from "./components/NewsList";
 import Paginator from "./components/Paginator";
+import {Container } from "reactstrap";
 
 
 function News() {
@@ -32,15 +33,17 @@ function News() {
   }
 
   return (
-    <div>
+    <>
+    <Container fluid>
       <NewsList news={news} />
       <Paginator
         currentPage={currentPage}
         totalPages={totalPages}
         handlePageChange={handlePageChange}
       />
+</Container>
       <Footer />
-    </div>
+      </>
   );
 }
 
