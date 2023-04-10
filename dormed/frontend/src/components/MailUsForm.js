@@ -4,7 +4,6 @@ import { Trans } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Alert from 'react-bootstrap/Alert';
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";

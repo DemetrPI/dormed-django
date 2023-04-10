@@ -8,12 +8,22 @@ import { ImagesForSliders } from "./components/imagesForSlides";
 import { useApi } from "./components/customHook";
 import Search from "./components/Search";
 import { useTranslation } from "react-i18next";
+import { applyThemeClasses } from "./components/applyThemeClasses";
 
 function Program() {
   const [programs, error, fetchData] = useApi(PROGRAM_API_URL);
   const [filteredItems, setFilteredItems] = useState([]);
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const [theme, setTheme] = useState("pink");
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      setTheme(currentTheme);
+      applyThemeClasses(currentTheme);
+    }
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -32,6 +42,12 @@ function Program() {
     setFilteredItems(filteredItems);
   };
 
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    applyThemeClasses(newTheme);
+  };
+
   return (
     <>
       <Container style={{ marginTop: "20px" }}>
@@ -46,6 +62,7 @@ function Program() {
             programs={programs}
             filteredItems={filteredItems}
             resetState={resetState}
+            handleThemeChange={handleThemeChange}
           />
         )}
       </Container>

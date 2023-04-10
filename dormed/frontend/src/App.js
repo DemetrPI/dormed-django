@@ -24,7 +24,6 @@ function App() {
 
   return (
     <>
-      <Container fluid className="justify-content-center align-items-center">
         <Hero />
         <Navbar collapseOnSelect expand="md" sticky="top">
           <Navbar.Toggle
@@ -63,7 +62,6 @@ function App() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </Container>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<Program />} />

@@ -4,10 +4,13 @@ import { useTranslation } from "react-i18next";
 import Dropdown from "react-bootstrap/Dropdown";
 import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
+import { applyThemeClasses } from "./applyThemeClasses";
 
 function ColorThemeSwitcher() {
   const [theme, setTheme] = useState("pink");
   const { t } = useTranslation();
+
+
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
     if (currentTheme) {
@@ -22,27 +25,27 @@ function ColorThemeSwitcher() {
     applyThemeClasses(newTheme);
   };
 
-  const applyThemeClasses = (themeName) => {
-    // Remove any existing theme classes from the document
-    const themeClasses = ["pink", "blue", "green", "dark"];
-    document.body.classList.remove(...themeClasses);
-    document
-      .querySelectorAll(
-        ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6"
-      )
-      .forEach((element) => {
-        element.classList.remove(...themeClasses);
-      });
-    // Add the appropriate theme class to the document and elements
-    document.body.classList.add(themeName);
-    document
-      .querySelectorAll(
-        ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6"
-      )
-      .forEach((element) => {
-        element.classList.add(themeName);
-      });
-  };
+  // const applyThemeClasses = (themeName) => {
+  //   // Remove any existing theme classes from the document
+  //   const themeClasses = ["pink", "blue", "green", "dark"];
+  //   document.body.classList.remove(...themeClasses);
+  //   document
+  //     .querySelectorAll(
+  //       ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6"
+  //     )
+  //     .forEach((element) => {
+  //       element.classList.remove(...themeClasses);
+  //     });
+  //   // Add the appropriate theme class to the document and elements
+  //   document.body.classList.add(themeName);
+  //   document
+  //     .querySelectorAll(
+  //       ".nav, .accordion-button, .accordion-body, .hero, .modal-90w, .submitButton, .accordion-item, label, [aria-expanded='true'], [aria-modal='true'], a, h1, h2, h3, h4, h5, h6"
+  //     )
+  //     .forEach((element) => {
+  //       element.classList.add(themeName);
+  //     });
+  // };
 
   return (
     <Dropdown as={NavItem}>

@@ -1,14 +1,24 @@
-import React from "react";
-import "../../static/css/custom.css";
+import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import { Button } from "reactstrap";
-import { useTranslation } from "react-i18next";
-import { Trans } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
-const ProgramList = ({ programs, filteredItems }) => {
-  const { t, i18n } = useTranslation();
+const ProgramList = ({ programs, filteredItems, handleThemeChange }) => {
+  const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemsToRender = filteredItems.length ? filteredItems : programs;
+  const [activeKey, setActiveKey] = useState(null);
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      handleThemeChange(currentTheme);
+    }
+  }, [handleThemeChange]);
+
+  const handleAccordionClick = (eventKey) => {
+    setActiveKey(activeKey === eventKey ? null : eventKey);
+  };
 
   return (
     <div>
@@ -28,10 +38,16 @@ const ProgramList = ({ programs, filteredItems }) => {
       ) : (
         itemsToRender.map((program) => (
           <div key={program.pk}>
-            <Accordion flush>
-              <Accordion.Item eventKey={program.pk}>
+            <Accordion activeKey={activeKey}>
+              <Accordion.Item
+                key={program.pk}
+                eventKey={program.pk}
+                onClick={() => handleAccordionClick(program.pk)}
+              >
                 <Accordion.Header>
-                  <h3>{program[`title_${currentLanguage}`]}</h3>
+                  <h3 className="accordBtnText">
+                    {program[`title_${currentLanguage}`]}
+                  </h3>
                 </Accordion.Header>
                 <Accordion.Body>
                   <h4>{program[`description_${currentLanguage}`]}</h4>
