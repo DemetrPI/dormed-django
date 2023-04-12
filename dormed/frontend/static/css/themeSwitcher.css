@@ -1,0 +1,92 @@
+:root {
+  --first-theme-color: hsl(0 0% 15%);
+  --second-theme-color: hsl(0 0% 100%);
+  --third-theme-color: hsl(0 0% 25%);
+  --fourth-theme-color: hsl(0 0% 90%);
+  --bs-btn-bg: var(--third-theme-color);
+  --bs-btn-border-color: var(--first-theme-color);
+  --bs-accordion-btn-bg: var(--third-theme-color);
+  --bs-accordion-active-bg: var(--fourth-theme-color);
+  --bs-accordion-bg: var(--second-theme-color);
+  }
+
+
+body {
+  color: var(--first-theme-color);
+  background: var(--fourth-theme-color);
+}
+
+footer div span,
+footer li svg,
+a,
+button,
+.navbar-brand,
+.btn,
+.navbar-toggler,
+.navbar-toggler-icon
+{
+  color: var(--second-theme-color);
+  --bs-btn-color:var(--second-theme-color);
+  --bs-nav-link-color: var(--second-theme-color);
+  --bs-navbar-brand-color: var(--second-theme-color);
+}
+
+.submitButton,
+.hero,
+.navbar,
+footer {
+  background-color: var(--third-theme-color);
+  color: var(--second-theme-color);
+}
+
+.pink {
+  --first-theme-color: hsl(310 50% 15%);
+  --second-theme-color: hsl(310 50% 100%);
+  --third-theme-color: hsl(310 50% 25%);
+  --fourth-theme-color: hsl(310 50% 90%);
+  --bs-btn-bg: var(--third-theme-color);
+  --bs-btn-border-color: var(--first-theme-color);
+  --bs-accordion-btn-bg: var(--third-theme-color);
+  --bs-accordion-active-bg: var(--fourth-theme-color);
+  --bs-accordion-bg: var(--fourth-theme-color);
+
+}
+#pink, #blue, #green, #dark {
+  background-color: var(--third-theme-color);
+}
+
+.blue {
+  --first-theme-color: hsl(209 50% 15%);
+  --second-theme-color: hsl(0, 0%, 100%);
+  --third-theme-color: hsl(209 50% 25%);
+  --fourth-theme-color: hsl(209 50% 90%);
+  --bs-btn-bg: var(--third-theme-color);
+  --bs-btn-border-color: var(--first-theme-color);
+  --bs-accordion-btn-bg: var(--third-theme-color);
+  --bs-accordion-active-bg: var(--fourth-theme-color);
+  --bs-accordion-bg: var(--fourth-theme-color);
+}
+
+.green {
+  --first-theme-color: hsl(109 50% 15%);
+  --second-theme-color: hsl(109 50% 100%);
+  --third-theme-color: hsl(109 50% 25%);
+  --fourth-theme-color: hsl(109 50% 90%);
+  --bs-btn-bg: var(--third-theme-color);
+  --bs-btn-border-color: var(--first-theme-color);
+  --bs-accordion-btn-bg: var(--third-theme-color);
+  --bs-accordion-active-bg: var(--fourth-theme-color);
+  --bs-accordion-bg: var(--fourth-theme-color);
+}
+
+.dark {
+  --first-theme-color: hsl(209 50% 90%);
+  --second-theme-color: hsl(209 50% 5%);
+  --third-theme-color: hsl(209 60% 90%);
+  --fourth-theme-color: hsl(209 50% 10%);
+  --bs-btn-bg: var(--third-theme-color);
+  --bs-btn-border-color: var(--first-theme-color);
+  --bs-accordion-btn-bg: var(--third-theme-color);
+  --bs-accordion-active-bg: var(--fourth-theme-color);
+  --bs-accordion-bg: var(--fourth-theme-color);
+}

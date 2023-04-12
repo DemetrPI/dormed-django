@@ -1,0 +1,219 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+@import "./themeSwitcher.css";
+
+
+.accordion-button.collapsed {
+  border-radius: 50% 50%;
+  align-items: center;
+}
+footer ul li a {
+  text-decoration: none;
+}
+
+footer {
+  border-radius: 10px;
+}
+
+footer h3,
+footer h5 {
+  color: var(--fourth-theme-color);
+}
+
+.footerLogo {
+  display: block;
+  margin-left: auto;
+}
+.hero {
+  border-radius: 10px 10px 0 0;
+}
+.navbar {
+  border-radius: 0 0 10px 10px;
+}
+
+
+.modalBody,
+.modalTitle {
+  background-color: var(--fourth-theme-color);
+}
+
+.btn {
+  color: var(--first-theme-color);
+  background-color: var(--second-theme-color);
+}
+
+.btn:hover {
+  background-color: var(--bs-accordion-btn-bg);
+}
+
+.news {
+  color: var(--second-theme-color);
+  background-color: var(--first-theme-color);
+  text-align: center;
+}
+
+.accordBtn {
+  color: var(--second-theme-color);
+  background-color: var(--first-theme-color);
+  text-align: center;
+}
+
+.collapsed .accordBtnText {
+  color: var(--second-theme-color);
+}
+
+.leftImage {
+  float: left;
+  margin: 7px 7px 7px 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 3px var(--third-theme-color);
+  max-width:95%;
+  height: auto;
+}
+
+.rightImage {
+  float: right;
+  margin: 7px 7px 7px 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 3px var(--third-theme-color);
+  max-width:95%;
+  height: auto;
+}
+
+.aboutDescription {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+td,
+th {
+  color: var(--third-theme-color);
+  --bs-table-striped-color: var(--third-theme-color);
+}
+
+td > .btn {
+  background-color: var(--third-theme-color);
+  color: var(--second-theme-color);
+}
+
+.btn-close {
+  color: var(--second-theme-color);
+}
+.modalHeader {
+  background-color: var(--third-theme-color);
+}
+
+.modalBody p,
+.modalBody li,
+.modalBody a {
+  color: var(--third-theme-color);
+}
+
+.programCarouselWrapper {
+  height: 20rem;
+}
+
+.tableHead {
+  text-align: center;
+}
+.tableHead > tr {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+p > a {
+  color: var(--first-theme-color);
+}
+
+tbody > tr > td:nth-child(1),
+tbody > tr > td:nth-child(3),
+tbody > tr > td:nth-child(4) {
+  text-align: end;
+}
+.rotate {
+  animation: mymove 10s ease-in-out infinite;
+}
+.headerImage {
+  height: 64px;
+}
+
+@keyframes mymove {
+  50% {
+    transform: rotateY(360deg);
+  }
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+  border-radius: 5px;
+}
+
+button:hover,
+button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+}
+
+@media (max-width: 991px) {
+  .socials li {
+    display: inline;
+    padding-right: 2rem;
+  }
+  .footerLogo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer .col p {
+    text-align: center;
+  }
+
+  .headerImage {
+    height: 96px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav{
+    --bs-nav-link-padding-y: 0.1rem;
+    --bs-nav-link-padding-x:15px;
+  }
+}
