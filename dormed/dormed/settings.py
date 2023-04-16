@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p)h3ozv&z_a#9c$yll67fw-(0o4f^g)p&i&ov=#$0@$h=9y7m5'
+SECRET_KEY = 'p)h3ozv&z_a#9c$yll67fw-(0o4f^g)p&i&ov=#$0@$h=9y7m5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app','localhost', 'localhost:8000']
+ALLOWED_HOSTS = ['127.0.0.1','localhost', 'localhost:8000', "*"]
 #for localhost only
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -133,7 +134,6 @@ LANGUAGES = (
 
 LOCALE_PATHS = (os.path.join(BASE_DIR,'locale/'),)
 
-
 TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
@@ -150,6 +150,9 @@ STATICFILES_DIRS = [
     'frontend/static/frontend',
     'frontend/static/images',
 ]    
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')   
 MEDIA_URL = '/media/'
