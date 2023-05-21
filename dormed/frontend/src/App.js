@@ -29,6 +29,15 @@ function App() {
     setExpanded(false);
   };
 
+  const handleThemeChange = () => {
+    setExpanded(false);
+  };
+
+  const handleLanguageChange = () => {
+    setExpanded(false);
+  };
+
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -55,7 +64,7 @@ function App() {
             aria-controls="navbarScroll"
             data-bs-target="navbarScroll"
             onClick={() => setExpanded((prevState) => !prevState)}
-            autoClose = "outside"
+            autoclose = "outside"
           />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -144,10 +153,10 @@ function App() {
               </Nav.Link>
               <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                 <Nav.Item>
-                  <LanguageChanger onSelect = {handleSelect}/>
+                  <LanguageChanger onChange = {handleLanguageChange}/>
                 </Nav.Item>
                 <Nav.Item>
-                  <ColorThemeSwitcher onClick = {handleSelect}/>
+                  <ColorThemeSwitcher onChange = {handleThemeChange}/>
                 </Nav.Item>
                 <Regulamin />
               </div>

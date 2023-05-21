@@ -1,4 +1,6 @@
-.search input {
+.search input,
+.select
+{
     margin: 10px 10px auto;
     width: 90%;
   }

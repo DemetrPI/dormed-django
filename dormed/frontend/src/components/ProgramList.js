@@ -3,11 +3,17 @@ import Accordion from "react-bootstrap/Accordion";
 import { Button } from "reactstrap";
 import { useTranslation, Trans } from "react-i18next";
 
-const ProgramList = ({ programs, filteredItems, handleThemeChange }) => {
+const ProgramList = ({ programs, filteredItems, handleThemeChange, selectedCategory }) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const itemsToRender = filteredItems.length ? filteredItems : programs;
   const [activeKey, setActiveKey] = useState(null);
+  
+  const filteredByCategory = selectedCategory
+  ? programs.filter((program) => program.category === selectedCategory.value)
+  : programs;
+  
+  const itemsToRender = filteredItems.length ? filteredItems : filteredByCategory;
+  
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");

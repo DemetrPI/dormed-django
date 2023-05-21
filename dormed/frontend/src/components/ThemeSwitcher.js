@@ -6,7 +6,7 @@ import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
 import { applyThemeClasses } from "./applyThemeClasses";
 
-function ColorThemeSwitcher() {
+function ColorThemeSwitcher(props) {
   const [theme, setTheme] = useState("pink");
   const { t } = useTranslation();
   
@@ -23,10 +23,12 @@ function ColorThemeSwitcher() {
       applyThemeClasses("pink"); // apply the default theme classes
     }
   }, []);
+  
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     applyThemeClasses(newTheme);
+    props.onChange(); // Invoke onChange prop to trigger collapse
   };
 
   return (

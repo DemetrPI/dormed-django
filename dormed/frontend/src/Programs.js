@@ -9,13 +9,15 @@ import { useApi } from "./components/customHook";
 import Search from "./components/Search";
 import { useTranslation } from "react-i18next";
 import { applyThemeClasses } from "./components/applyThemeClasses";
+import Select from 'react-select';
 
 function Program() {
   const [programs, error, fetchData] = useApi(PROGRAM_API_URL);
   const [filteredItems, setFilteredItems] = useState([]);
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLanguage = i18n.language;
   const [theme, setTheme] = useState("pink");
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
@@ -48,6 +50,25 @@ function Program() {
     applyThemeClasses(newTheme);
   };
 
+  
+  const handleCategoryChange = (selectedOption) => {
+    if (selectedOption && selectedOption.value === "") {
+      setSelectedCategory(null); // Reset selectedCategory to null
+    } else {
+      setSelectedCategory(selectedOption);
+    }
+  };
+
+  const options = [
+    { value:'', label: t('Wszystkie kategorie')},
+    { value: 'KS', label: t('Kosmetologia') },
+    { value: 'LS', label: t('Laseroterapia') },
+    { value: 'KT', label: t('Kosmetyka') },
+    { value: 'ZE', label: t('Zabiegi Estetyczne') },
+    { value: 'TR', label: t('Trychologia') },
+    { value: 'PD', label: t('Podologia') },
+  ];
+
   return (
     <>
       <Container fluid style={{ marginTop: "20px" }}>
@@ -55,6 +76,13 @@ function Program() {
           <ProgramCarousel data={ImagesForSliders} />
         </div>
         <Search onSearch={handleSearch} />
+        <Select
+        options={options}
+        onChange={handleCategoryChange}
+        value={selectedCategory}
+        className="select"
+        placeholder={t("Tutaj możesz wybrać kategorię... ")}
+      />
         {error ? (
           <div>Error: {error.message}</div>
         ) : (
@@ -63,6 +91,7 @@ function Program() {
             filteredItems={filteredItems}
             resetState={resetState}
             handleThemeChange={handleThemeChange}
+            selectedCategory={selectedCategory}
           />
         )}
       </Container>

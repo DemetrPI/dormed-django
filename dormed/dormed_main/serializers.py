@@ -4,7 +4,7 @@ from .models import Price, Program, HotelNews
 class PriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Price
-        fields = ('pk','position', 'position_en', 'position_pl', 'position_uk', 'price')
+        fields = ('pk','position', 'position_en', 'position_pl', 'position_uk', 'price', 'category')
         
 
 class ProgramSerializer(serializers.ModelSerializer):
@@ -12,7 +12,7 @@ class ProgramSerializer(serializers.ModelSerializer):
         model = Program
         fields = ('pk','title', 'title_uk','title_pl','title_en',
                   'description','description_uk', 'description_pl','description_en', 
-                  'results','results_uk','results_pl','results_en')
+                  'results','results_uk','results_pl','results_en', 'category')
         
 
 class HotelNewsSerializer(serializers.ModelSerializer):

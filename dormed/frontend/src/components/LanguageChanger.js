@@ -19,10 +19,11 @@ function LanguageChanger(props) {
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
     localStorage.setItem("language", language);
+    props.onChange(); // Invoke onChange prop to trigger collapse
   };
 
   return (
-    <Dropdown as={NavItem} onClick={props.handleSelect} ref={dropdownRef} autoClose="inside">
+    <Dropdown as={NavItem} onClick={props.handleSelect} ref={dropdownRef} autoclose="inside">
       <Dropdown.Toggle as={NavLink} className="pulse language" id="dropdown">
         <Trans i18nKey="JĘZYK">JĘZYK</Trans>
       </Dropdown.Toggle>

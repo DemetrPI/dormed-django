@@ -1,13 +1,17 @@
-import "../../static/css/custom.css";
 import React from "react";
 import { Button, Table } from "reactstrap";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
-function PriceList({ prices, filteredItems }) {
-  const itemsToRender = filteredItems.length ? filteredItems : prices;
+function PriceList({ prices, filteredItems, selectedCategory }) {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
+  const filteredByCategory = selectedCategory
+    ? prices.filter((price) => price.category === selectedCategory.value)
+    : prices;
+
+  const itemsToRender = filteredItems.length ? filteredItems : filteredByCategory;
 
   return (
     <div>
@@ -36,7 +40,7 @@ function PriceList({ prices, filteredItems }) {
                 <td>
                   <Button>
                     <a href="https://wirtualny-kalendarz.pl/rezerwacje-online/5d72d7ed85ec833211caec159436a6df">
-                      <Trans i18nKey = "order">Zamów!</Trans>
+                      <Trans i18nKey="order">Zamów!</Trans>
                     </a>
                   </Button>
                 </td>
