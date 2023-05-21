@@ -1,5 +1,5 @@
-import React from "react";
 import "../../static/css/custom.css";
+import React from "react";
 import { Button, Table } from "reactstrap";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";

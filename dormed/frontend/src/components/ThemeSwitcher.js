@@ -9,7 +9,7 @@ import { applyThemeClasses } from "./applyThemeClasses";
 function ColorThemeSwitcher() {
   const [theme, setTheme] = useState("pink");
   const { t } = useTranslation();
-
+  
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
@@ -17,15 +17,18 @@ function ColorThemeSwitcher() {
       setTheme(currentTheme);
       applyThemeClasses(currentTheme);
     }
+    else {
+      setTheme("pink"); // set default theme to "pink"
+      localStorage.setItem("theme", "pink"); // save the default theme to local storage
+      applyThemeClasses("pink"); // apply the default theme classes
+    }
   }, []);
-
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     applyThemeClasses(newTheme);
   };
 
-  
   return (
     <Dropdown as={NavItem}>
       <Dropdown.Toggle as={NavLink}>{t("COLOR THEME")}</Dropdown.Toggle>

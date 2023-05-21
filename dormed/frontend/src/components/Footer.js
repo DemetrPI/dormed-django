@@ -24,11 +24,6 @@ function Footer() {
               <Trans i18nKey="city">28-100 Busko Zdrój</Trans>
             </li>
             <li>
-              <a className="pulse" href="mailto:willa@salondorotka.pl">
-                willa@salondorotka.pl
-              </a>
-            </li>
-            <li>
               <a className="pulse" href="mailto:willadorotka@gmail.com">
                 willadorotka@gmail.com
               </a>
@@ -82,7 +77,7 @@ function Footer() {
             <li className="pulse">NIP: 655-104-79-57</li>
             <li className="pulse">Regon: 292668013</li>
             <li className="pulse">mBank</li>
-            <li className="pulse">33114020040000310241790650</li>
+            <li className="pulse">3311 4020 0400 0031 0241 790 650</li>
           </ul>
         </Col>
         <Col className="text-center col-sm-12">

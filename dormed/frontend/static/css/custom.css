@@ -10,8 +10,13 @@ footer ul li a {
   text-decoration: none;
 }
 
+.programList{
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
 footer {
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 footer h3,
@@ -23,13 +28,27 @@ footer h5 {
   display: block;
   margin-left: auto;
 }
-.hero {
-  border-radius: 10px 10px 0 0;
-}
+
 .navbar {
   border-radius: 0 0 10px 10px;
 }
 
+.menuSelected {
+  border-bottom: 1px solid var(--first-theme-color);
+  border-top: 1px solid var(--second-theme-color);
+  
+}
+
+.scrollTop {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 5;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: var(--fourth-theme-color);
+  }
 
 .modalBody,
 .modalTitle {
@@ -61,6 +80,10 @@ footer h5 {
   color: var(--second-theme-color);
 }
 
+.dropdown-item {
+  --bs-dropdown-link-color: var(--second-theme-color);
+}
+
 .leftImage {
   float: left;
   margin: 7px 7px 7px 15px;
@@ -90,6 +113,7 @@ h3,
 h4,
 h5,
 h6,
+.programEffects,
 td,
 th {
   color: var(--third-theme-color);

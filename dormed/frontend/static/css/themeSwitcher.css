@@ -8,14 +8,18 @@
   --bs-accordion-btn-bg: var(--third-theme-color);
   --bs-accordion-active-bg: var(--fourth-theme-color);
   --bs-accordion-bg: var(--second-theme-color);
+  --icon-color:rgba(0, 128, 0, 0.8);
   }
 
-
-body {
-  color: var(--first-theme-color);
-  background: var(--fourth-theme-color);
-}
-
+  
+  body {
+    color: var(--first-theme-color);
+    background: var(--fourth-theme-color);
+  }
+  
+  .container-fluid {
+    padding: 0;
+  }
 footer div span,
 footer li svg,
 a,
@@ -29,7 +33,16 @@ button,
   --bs-btn-color:var(--second-theme-color);
   --bs-nav-link-color: var(--second-theme-color);
   --bs-navbar-brand-color: var(--second-theme-color);
+  --navbar-dark-color:var(--second-theme-color);
+  --navbar-light-color:var(--second-theme-color);
 }
+.custom-toggler .navbar-toggler-icon {
+  background-image: url(
+    "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='var(--icon-color)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+
 
 .submitButton,
 .hero,
@@ -51,7 +64,7 @@ footer {
   --bs-accordion-bg: var(--fourth-theme-color);
 
 }
-#pink, #blue, #green, #dark {
+#pink, #blue, #green, #dark, .language {
   background-color: var(--third-theme-color);
 }
 

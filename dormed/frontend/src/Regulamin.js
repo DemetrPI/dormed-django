@@ -140,11 +140,9 @@ function Regulamin() {
             </li>
             <li>
               {t("Przebywanie zwierząt")}
-              <p>
-                {t("Za odpowiednią zwierzętami")}
-                <p className="text-danger text-center">
-                  {t("nie przyjmuje zwierząt")}
-                </p>
+              <p>{t("Za odpowiednią zwierzętami")}</p>
+              <p className="text-danger text-center">
+                {t("nie przyjmuje zwierząt")}
               </p>
             </li>
             <li>
