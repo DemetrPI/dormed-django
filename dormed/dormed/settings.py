@@ -27,7 +27,7 @@ SECRET_KEY = 'p)h3ozv&z_a#9c$yll67fw-(0o4f^g)p&i&ov=#$0@$h=9y7m5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost', 'localhost:8000', "*"]
+ALLOWED_HOSTS = ['127.0.0.1','localhost', 'localhost:8000', "dormed.fly.dev"]
 #for localhost only
 CORS_ORIGIN_ALLOW_ALL = True
 
