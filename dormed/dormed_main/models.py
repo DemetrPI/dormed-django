@@ -6,7 +6,8 @@ CATEGORY = (
     ('KT', 'Kosmetyka'),
     ('ZE', 'Zabiegi Estetyczne'),
     ('TR', 'Trychologia'),
-    ('PD', 'Podologia')
+    ('PD', 'Podologia'),
+    ('MS', 'Masaże')
     
 )
 

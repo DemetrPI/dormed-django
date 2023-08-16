@@ -67,6 +67,7 @@ function Program() {
     { value: 'ZE', label: t('Zabiegi Estetyczne') },
     { value: 'TR', label: t('Trychologia') },
     { value: 'PD', label: t('Podologia') },
+    { value: 'MS', label: t('Masaże')}
   ];
 
   return (

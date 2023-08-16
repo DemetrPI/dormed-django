@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 
-LANGUAGE_CODE = 'pl'
+LANGUAGE_CODE = 'uk'
 
 LANGUAGE_COOKIE_NAME = 'django_language'
 
