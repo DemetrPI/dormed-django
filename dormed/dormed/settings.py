@@ -11,23 +11,33 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
 from django.utils.translation import gettext_lazy as _
+# reading .env file
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# False if not in os.environ because of casting above
+DEBUG = env('DEBUG')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p)h3ozv&z_a#9c$yll67fw-(0o4f^g)p&i&ov=#$0@$h=9y7m5'
+SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost', 'localhost:8000', "dormed.fly.dev"]
+ALLOWED_HOSTS = []
 #for localhost only
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -88,11 +98,11 @@ WSGI_APPLICATION = 'dormed.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demetrdbase',
-        'USER': 'root',
+        'NAME': env('DBNAME'),
+        'USER': env('DBUSER'),
         'PORT':'3306',
-        'HOST':'localhost',
-        'PASSWORD': 'TzpSjia4gm2hpxA'
+        'HOST':env('DBHOST'),
+        'PASSWORD': env('DBPASS')
         
         
     }
