@@ -11,3 +11,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dormed.settings')
 application = get_wsgi_application()
+
+# <module> is the name of the folder that contains wsgi.py
+gunicorn --bind=0.0.0.0 --timeout 600 dormed.wsgi
