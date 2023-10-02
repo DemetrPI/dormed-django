@@ -12,5 +12,9 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dormed.settings')
 application = get_wsgi_application()
 
-# <module> is the name of the folder that contains wsgi.py
-gunicorn --bind=0.0.0.0 --timeout 600 dormed.wsgi
+# If WEBSITE_HOSTNAME is defined as an environment variable, then we're running
+# on Azure App Service and should use the production settings in production.py.
+settings_module = "dormed.production" if 'WEBSITE_HOSTNAME' in os.environ else 'dormed.settings'
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
+
+application = get_wsgi_application()
