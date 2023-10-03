@@ -3,7 +3,7 @@ import os
 
 # Configure the domain name using the environment variable
 # that Azure automatically creates for us.
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else ['*']
 
 # WhiteNoise configuration
 MIDDLEWARE = [                                                                   
@@ -11,8 +11,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',                      
-    'django.middleware.common.CommonMiddleware',                                 `
-    'django.middleware.csrf.CsrfViewMiddleware',                                 `
+    'django.middleware.common.CommonMiddleware',                                 
+    'django.middleware.csrf.CsrfViewMiddleware',                                 
     'django.contrib.auth.middleware.AuthenticationMiddleware',                   
     'django.contrib.messages.middleware.MessageMiddleware',                      
     'django.middleware.clickjacking.XFrameOptionsMiddleware',                    
@@ -34,16 +34,3 @@ DATABASES = {
         'PORT':"3306" 
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': env('DBNAME'),
-#         'USER': env('DBUSER'),
-#         'PORT':'3306',
-#         'HOST':env('DBHOST'),
-#         'PASSWORD': env('DBPASS')
-        
-        
-#     }
-# }
