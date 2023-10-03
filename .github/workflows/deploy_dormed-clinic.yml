@@ -27,7 +27,7 @@ jobs:
         run: cd dormed
       
       - name: Install dependencies
-        run: pip install -r requirements.txt  # Now 'requirements.txt' is in 'dormed' folder
+        run: pip install -r dormed/requirements.txt  # Now 'requirements.txt' is in 'dormed' folder
 
       # Optional: Add steps to run tests here (PyTest, Django test suites, etc.)
       
