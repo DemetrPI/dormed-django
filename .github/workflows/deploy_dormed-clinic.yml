@@ -22,10 +22,7 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-      
-      - name: Set working directory to 'dormed'
-        run: cd dormed
-      
+
       - name: Install dependencies
         run: pip install -r dormed/requirements.txt  # Now 'requirements.txt' is in 'dormed' folder
 
@@ -49,9 +46,6 @@ jobs:
         with:
           name: python-app
           path: .
-          
-      - name: Set working directory to 'dormed'
-        run: cd dormed
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
