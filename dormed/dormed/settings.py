@@ -95,13 +95,14 @@ WSGI_APPLICATION = 'dormed.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+hostname = os.environ['DBHOST']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DBNAME'),
-        'USER': env('DBUSER'),
+        'NAME': os.environ["DBNAME"],
+        'USER': os.environ['DBUSER'],
         'PORT':'3306',
-        'HOST':env('DBHOST'),
+        'HOST': hostname + ".mysql.database.azure.com",
         'PASSWORD': env('DBPASS')
         
         
