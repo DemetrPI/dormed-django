@@ -167,7 +167,7 @@ STATICFILES_DIRS = [
     'frontend/static/frontend',
     'frontend/static/images',
 ]    
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "frontend"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     
