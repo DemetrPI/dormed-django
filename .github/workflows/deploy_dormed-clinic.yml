@@ -15,7 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout dormed-django repository
+        uses: actions/checkout@v2
+        with:
+          repository: DemetrPI/dormed-django
+          ref: deploy/dormed
+          path: dormed-django
 
       - name: Set up Python version
         uses: actions/setup-python@v1
@@ -28,7 +33,7 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r dormed-django/requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
@@ -36,9 +41,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: python-app
-          path: |
-            . 
-            !venv/
+          path: .
+          # Exclude any unwanted files or folders here
 
   deploy:
     runs-on: ubuntu-latest
